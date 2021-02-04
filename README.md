@@ -1,1 +1,1 @@
-awesome game
+awesome game 1.0
