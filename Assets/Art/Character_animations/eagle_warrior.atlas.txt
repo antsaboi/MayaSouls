@@ -1,0 +1,314 @@
+
+eagle_warrior.png
+size: 205,269
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BALL1
+  rotate: true
+  xy: 186, 63
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+BALL2
+  rotate: true
+  xy: 178, 46
+  size: 11, 9
+  orig: 11, 9
+  offset: 0, 0
+  index: -1
+BALL3
+  rotate: true
+  xy: 189, 50
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+BALL4
+  rotate: false
+  xy: 189, 38
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+BALL_BACK
+  rotate: true
+  xy: 78, 2
+  size: 8, 10
+  orig: 8, 10
+  offset: 0, 0
+  index: -1
+BALL_BACK2
+  rotate: true
+  xy: 78, 2
+  size: 8, 10
+  orig: 8, 10
+  offset: 0, 0
+  index: -1
+Back_lower_foot Copy
+  rotate: true
+  xy: 170, 39
+  size: 14, 6
+  orig: 14, 6
+  offset: 0, 0
+  index: -1
+Back_upper_foot Copy
+  rotate: true
+  xy: 97, 2
+  size: 11, 17
+  orig: 11, 17
+  offset: 0, 0
+  index: -1
+Folder 2 Copy 10
+  rotate: false
+  xy: 140, 7
+  size: 13, 29
+  orig: 13, 29
+  offset: 0, 0
+  index: -1
+Folder 2 Copy 11
+  rotate: false
+  xy: 155, 8
+  size: 13, 28
+  orig: 13, 28
+  offset: 0, 0
+  index: -1
+Folder 2 Copy 12
+  rotate: false
+  xy: 175, 129
+  size: 28, 14
+  orig: 28, 14
+  offset: 0, 0
+  index: -1
+Folder 2 Copy 13
+  rotate: false
+  xy: 153, 119
+  size: 20, 23
+  orig: 20, 23
+  offset: 0, 0
+  index: -1
+Folder 2 Copy 2
+  rotate: false
+  xy: 149, 55
+  size: 23, 20
+  orig: 23, 20
+  offset: 0, 0
+  index: -1
+GHOST
+  rotate: false
+  xy: 2, 47
+  size: 121, 220
+  orig: 121, 220
+  offset: 0, 0
+  index: -1
+Layer 118
+  rotate: false
+  xy: 124, 2
+  size: 14, 34
+  orig: 14, 34
+  offset: 0, 0
+  index: -1
+Layer 2 Copy
+  rotate: true
+  xy: 170, 23
+  size: 14, 10
+  orig: 14, 10
+  offset: 0, 0
+  index: -1
+Layer 4 Copy
+  rotate: true
+  xy: 2, 3
+  size: 42, 59
+  orig: 42, 59
+  offset: 0, 0
+  index: -1
+ROPE_BACK_LOWER
+  rotate: false
+  xy: 199, 122
+  size: 4, 5
+  orig: 4, 5
+  offset: 0, 0
+  index: -1
+ROPE_BACK_TOP
+  rotate: false
+  xy: 63, 2
+  size: 13, 8
+  orig: 13, 8
+  offset: 0, 0
+  index: -1
+ROPE_FRONT
+  rotate: true
+  xy: 198, 155
+  size: 6, 5
+  orig: 6, 5
+  offset: 0, 0
+  index: -1
+SLEEVE FRONT Copy
+  rotate: true
+  xy: 172, 214
+  size: 25, 30
+  orig: 25, 30
+  offset: 0, 0
+  index: -1
+SLEEVE FRONT back
+  rotate: true
+  xy: 172, 241
+  size: 26, 31
+  orig: 26, 31
+  offset: 0, 0
+  index: -1
+SQUARE
+  rotate: true
+  xy: 190, 89
+  size: 12, 13
+  orig: 12, 13
+  offset: 0, 0
+  index: -1
+SWORD HAND
+  rotate: true
+  xy: 125, 144
+  size: 67, 27
+  orig: 67, 27
+  offset: 0, 0
+  index: -1
+SWORD HAND_ARM
+  rotate: false
+  xy: 125, 213
+  size: 45, 54
+  orig: 45, 54
+  offset: 0, 0
+  index: -1
+arm
+  rotate: false
+  xy: 174, 59
+  size: 10, 15
+  orig: 10, 15
+  offset: 0, 0
+  index: -1
+back_hand Copy
+  rotate: false
+  xy: 90, 5
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+foot
+  rotate: false
+  xy: 63, 12
+  size: 32, 33
+  orig: 32, 33
+  offset: 0, 0
+  index: -1
+front_hand Copy
+  rotate: false
+  xy: 170, 9
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+front_lower_foot Copy
+  rotate: false
+  xy: 175, 76
+  size: 13, 7
+  orig: 13, 7
+  offset: 0, 0
+  index: -1
+front_upper_foot Copy
+  rotate: true
+  xy: 149, 38
+  size: 15, 19
+  orig: 15, 19
+  offset: 0, 0
+  index: -1
+glow
+  rotate: false
+  xy: 153, 108
+  size: 14, 9
+  orig: 14, 9
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 97, 15
+  size: 25, 30
+  orig: 25, 30
+  offset: 0, 0
+  index: -1
+hood back
+  rotate: true
+  xy: 154, 145
+  size: 16, 42
+  orig: 16, 42
+  offset: 0, 0
+  index: -1
+jade Copy
+  rotate: false
+  xy: 175, 85
+  size: 13, 16
+  orig: 13, 16
+  offset: 0, 0
+  index: -1
+lower foot
+  rotate: false
+  xy: 175, 115
+  size: 22, 12
+  orig: 22, 12
+  offset: 0, 0
+  index: -1
+lower foot Copy
+  rotate: false
+  xy: 175, 103
+  size: 22, 10
+  orig: 22, 10
+  offset: 0, 0
+  index: -1
+mask
+  rotate: false
+  xy: 125, 38
+  size: 22, 32
+  orig: 22, 32
+  offset: 0, 0
+  index: -1
+palm
+  rotate: true
+  xy: 190, 77
+  size: 10, 13
+  orig: 10, 13
+  offset: 0, 0
+  index: -1
+skirt
+  rotate: false
+  xy: 154, 163
+  size: 49, 48
+  orig: 49, 48
+  offset: 0, 0
+  index: -1
+sleeve back
+  rotate: false
+  xy: 149, 77
+  size: 24, 29
+  orig: 24, 29
+  offset: 0, 0
+  index: -1
+thigh back
+  rotate: false
+  xy: 125, 108
+  size: 26, 34
+  orig: 26, 34
+  offset: 0, 0
+  index: -1
+thigh front
+  rotate: false
+  xy: 125, 72
+  size: 22, 34
+  orig: 22, 34
+  offset: 0, 0
+  index: -1
+weapon_shine
+  rotate: false
+  xy: 169, 109
+  size: 4, 8
+  orig: 4, 8
+  offset: 0, 0
+  index: -1
