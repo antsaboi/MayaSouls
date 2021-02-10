@@ -101,15 +101,15 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -121,8 +121,6 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
-  flipbookRows: 1
-  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -168,11 +166,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -50, y: 50}
-        - {x: -50, y: -50}
-        - {x: 50, y: -50}
-        - {x: 50, y: 50}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 9350eb4c16147aba0800000000000000
@@ -193,12 +187,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -50, y: 50}
-        - {x: -50, y: 2}
-        - {x: -46, y: 2}
-        - {x: 50, y: 14}
-        - {x: 50, y: 50}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: c7c4f329877eb4740800000000000000
@@ -219,12 +208,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -50, y: 50}
-        - {x: -50, y: 14}
-        - {x: -49, y: 13}
-        - {x: 50, y: 13}
-        - {x: 50, y: 50}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 0b640e28d22d47a30800000000000000
@@ -245,12 +229,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -50, y: 50}
-        - {x: -50, y: 13}
-        - {x: 49, y: 2}
-        - {x: 50, y: 2}
-        - {x: 50, y: 50}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 151cad7c54478a760800000000000000
@@ -292,11 +271,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -50, y: 50}
-        - {x: -50, y: -50}
-        - {x: 50, y: -50}
-        - {x: 50, y: 50}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: aa91d90c7486fa610800000000000000
@@ -317,11 +292,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -50, y: 50}
-        - {x: -50, y: -50}
-        - {x: 50, y: -50}
-        - {x: 50, y: 50}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 7f9ba8fb1c8349b10800000000000000
@@ -342,11 +313,7 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -50, y: 50}
-        - {x: -50, y: -50}
-        - {x: 50, y: -50}
-        - {x: 50, y: 50}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 9c47234b4184d9860800000000000000
@@ -359,10 +326,10 @@ TextureImporter:
       name: _ileset_8
       rect:
         serializedVersion: 2
-        x: 343
+        x: 344
         y: 220
-        width: 101
-        height: 101
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -382,8 +349,8 @@ TextureImporter:
         serializedVersion: 2
         x: 449
         y: 220
-        width: 101
-        height: 101
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -485,10 +452,10 @@ TextureImporter:
       name: _ileset_14
       rect:
         serializedVersion: 2
-        x: 343
-        y: 114
-        width: 101
-        height: 101
+        x: 344
+        y: 115
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -507,9 +474,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 449
-        y: 114
-        width: 101
-        height: 101
+        y: 115
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
