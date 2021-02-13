@@ -4940,7 +4940,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  raycastDistance: 0.5
+  raycastDistance: 0.1
 --- !u!70 &833505762
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
