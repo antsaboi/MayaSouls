@@ -88,7 +88,18 @@ public class MouseDragUser : MonoBehaviour
     void AttachToMouse(Vector2 position)
     {
         dragging = true;
-        currentDragTarget.Attach(draggingColor);
+
+        switch (attachType)
+        {
+            case AttachType.mousePoint:
+                currentDragTarget.Attach(draggingColor, position);
+                break;
+            case AttachType.pivot:
+                currentDragTarget.Attach(draggingColor, Vector2.zero);
+                break;
+            default:
+                break;
+        }
     }
 
     void DetachTarget()
