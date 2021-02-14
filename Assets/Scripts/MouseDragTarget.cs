@@ -19,10 +19,12 @@ public class MouseDragTarget : MonoBehaviour
         joint.enabled = false;
     }
 
-    public void Attach(Color color, Vector2 pos)
+    public void Attach(Color color, Vector2 pos, float damping, float frequency)
     {
         if (pos != Vector2.zero) joint.anchor = transform.InverseTransformPoint(pos);
         else joint.anchor = Vector2.zero;
+        joint.dampingRatio = damping;
+        joint.frequency = frequency;
         joint.enabled = true;
         spriteRenderer.color = color;
     }

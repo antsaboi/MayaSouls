@@ -92,10 +92,10 @@ public class MouseDragUser : MonoBehaviour
         switch (attachType)
         {
             case AttachType.mousePoint:
-                currentDragTarget.Attach(draggingColor, position);
+                currentDragTarget.Attach(draggingColor, position, damping, frequency);
                 break;
             case AttachType.pivot:
-                currentDragTarget.Attach(draggingColor, Vector2.zero);
+                currentDragTarget.Attach(draggingColor, Vector2.zero, damping, frequency);
                 break;
             default:
                 break;
