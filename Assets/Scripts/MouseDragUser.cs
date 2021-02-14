@@ -93,6 +93,8 @@ public class MouseDragUser : MonoBehaviour
 
     void DetachTarget()
     {
+        if (ReferenceEquals(currentDragTarget, null)) return;
+
         dragging = false;
         currentDragTarget.Detach();
         currentDragTarget = null;
