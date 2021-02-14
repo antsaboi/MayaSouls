@@ -44,7 +44,8 @@ public class Character_controller : MonoBehaviour
 
         if (Mathf.Abs(xMovement) > 0)
         {
-            currentVelocity = new Vector2(movingSpeed * xMovement, body.velocity.y);
+            float speedIncrease = Mathf.MoveTowards(body.velocity.x, movingSpeed * xMovement, speedBuildFactor * Time.deltaTime);
+            currentVelocity = new Vector2(speedIncrease, body.velocity.y);
         }
         else {
             float speedDecrease = Mathf.MoveTowards(body.velocity.x, 0, speedDecreaseFactor * Time.deltaTime);
