@@ -10,6 +10,7 @@ public class MouseDragTarget : MonoBehaviour
     private Rigidbody2D body;
     private SpriteRenderer spriteRenderer;
     private TargetJoint2D joint;
+    Animator anim;
 
     private void Start()
     {
@@ -17,6 +18,9 @@ public class MouseDragTarget : MonoBehaviour
         joint = GetComponent<TargetJoint2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         joint.enabled = false;
+
+        //This is a test area
+        anim = GetComponentInChildren<Animator>();
     }
 
     public void Attach(Color color, Vector2 pos, float damping, float frequency)
@@ -26,7 +30,8 @@ public class MouseDragTarget : MonoBehaviour
         joint.dampingRatio = damping;
         joint.frequency = frequency;
         joint.enabled = true;
-        spriteRenderer.color = color;
+        //spriteRenderer.color = color;
+        anim.SetBool("Glowing", true);
     }
 
     public void Move(Transform target)
@@ -38,5 +43,6 @@ public class MouseDragTarget : MonoBehaviour
     {
         joint.enabled = false;
         spriteRenderer.color = Color.white;
+        anim.SetBool("Glowing", false);
     }
 }

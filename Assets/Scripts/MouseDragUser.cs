@@ -40,12 +40,6 @@ public class MouseDragUser : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (dragging)
-            {
-                DetachTarget();
-                return;
-            }
-
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
             if (hit.collider != null)
@@ -76,6 +70,15 @@ public class MouseDragUser : MonoBehaviour
             else
             {
                 DetachTarget();
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (dragging)
+            {
+                DetachTarget();
+                return;
             }
         }
 
