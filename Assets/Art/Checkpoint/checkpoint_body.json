@@ -1,0 +1,226 @@
+{
+"skeleton": {
+	"hash": "eIgkDnK4faSvxF10bvlnZvIX8ac",
+	"spine": "3.8.99",
+	"x": -730.71,
+	"y": -43.29,
+	"width": 1420,
+	"height": 1780.23,
+	"images": "../PSD/images/",
+	"audio": "C:/Users/anton/Desktop/stuff/mayapeli/PSD"
+},
+"bones": [
+	{ "name": "root", "x": 249.26, "y": -192.79 }
+],
+"slots": [
+	{ "name": "Layer 27 Copy", "bone": "root", "attachment": "Layer 27 Copy" },
+	{ "name": "Layer 30 Copy 2", "bone": "root", "attachment": "Layer 30 Copy 2" },
+	{ "name": "BODY2", "bone": "root", "attachment": "Layer 36 Copy" },
+	{ "name": "BODY3", "bone": "root", "attachment": "Layer 30 Copy" },
+	{ "name": "BODY1", "bone": "root", "attachment": "Layer 33 Copy" },
+	{ "name": "LINES Copy", "bone": "root", "attachment": "LINES Copy" },
+	{ "name": "SPHERE", "bone": "root", "attachment": "Layer 43 Copy" },
+	{ "name": "Layer 27 Copy 2", "bone": "root", "attachment": "Layer 27 Copy 2" },
+	{ "name": "Layer 30 Copy 4", "bone": "root", "attachment": "Layer 30 Copy 4" },
+	{ "name": "HANDS3", "bone": "root", "attachment": "Layer 36 Copy 2" },
+	{ "name": "HANDS2", "bone": "root", "attachment": "Layer 30 Copy 3" },
+	{ "name": "HANDS1", "bone": "root", "attachment": "Layer 33 Copy 2" },
+	{ "name": "Folder 6 Copy 2", "bone": "root", "attachment": "Folder 6 Copy 2" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"BODY1": {
+				"Layer 33 Copy": { "x": -270.97, "y": 986.73, "width": 1188, "height": 1594 }
+			},
+			"BODY2": {
+				"Layer 36 Copy": { "x": -268.97, "y": 1051.73, "width": 1360, "height": 1724 }
+			},
+			"BODY3": {
+				"Layer 30 Copy": { "x": -288.97, "y": 1011.23, "width": 1284, "height": 1643 }
+			},
+			"Folder 6 Copy 2": {
+				"Folder 6 Copy 2": { "x": -289.08, "y": 686.1, "width": 1054, "height": 426 }
+			},
+			"HANDS1": {
+				"Layer 33 Copy 2": { "x": -283.08, "y": 783.1, "width": 884, "height": 594 }
+			},
+			"HANDS2": {
+				"Layer 30 Copy 3": { "x": -287.08, "y": 677.6, "width": 916, "height": 383 }
+			},
+			"HANDS3": {
+				"Layer 36 Copy 2": { "x": -242.08, "y": 622.6, "width": 1122, "height": 525 }
+			},
+			"LINES Copy": {
+				"LINES Copy": { "x": -269.97, "y": 1059.73, "width": 1420, "height": 1740 }
+			},
+			"Layer 27 Copy": {
+				"Layer 27 Copy": { "x": -267.97, "y": 1058.73, "width": 1412, "height": 1738 }
+			},
+			"Layer 27 Copy 2": {
+				"Layer 27 Copy 2": { "x": -289.58, "y": 690.1, "width": 1047, "height": 416 }
+			},
+			"Layer 30 Copy 2": {
+				"Layer 30 Copy 2": { "x": -269.97, "y": 1051.73, "width": 1384, "height": 1724 }
+			},
+			"Layer 30 Copy 4": {
+				"Layer 30 Copy 4": { "x": -288.58, "y": 730.6, "width": 1029, "height": 475 }
+			},
+			"SPHERE": {
+				"Layer 43 Copy": { "x": -275.3, "y": 528.37, "scaleX": 2.1166, "scaleY": 2.1166, "width": 472, "height": 358 }
+			}
+		}
+	}
+],
+"animations": {
+	"BODY": {
+		"slots": {
+			"BODY1": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff79", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3.3333, "color": "ffffffff" }
+				]
+			},
+			"BODY2": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff79", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3.3333, "color": "ffffffff" }
+				]
+			},
+			"BODY3": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff79", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3.3333, "color": "ffffffff" }
+				]
+			},
+			"Folder 6 Copy 2": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"HANDS1": {
+				"color": [
+					{ "color": "ffffff00", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"HANDS2": {
+				"color": [
+					{ "color": "ffffff00", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"HANDS3": {
+				"color": [
+					{ "color": "ffffff00", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"Layer 27 Copy 2": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"Layer 30 Copy 4": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"SPHERE": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			}
+		}
+	},
+	"HANDS": {
+		"slots": {
+			"BODY1": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"BODY2": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"BODY3": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"HANDS1": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff79", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3.3333, "color": "ffffffff" }
+				]
+			},
+			"HANDS2": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff79", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3.3333, "color": "ffffffff" }
+				]
+			},
+			"HANDS3": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff79", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3.3333, "color": "ffffffff" }
+				]
+			},
+			"LINES Copy": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"Layer 27 Copy": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"Layer 30 Copy 2": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.6667, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			},
+			"SPHERE": {
+				"color": [
+					{ "color": "ffffff00", "curve": "stepped" },
+					{ "time": 1.6667, "color": "ffffff00", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3.3333, "color": "ffffff00" }
+				]
+			}
+		}
+	}
+}
+}

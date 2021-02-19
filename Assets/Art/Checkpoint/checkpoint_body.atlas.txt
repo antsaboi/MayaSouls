@@ -1,0 +1,103 @@
+
+checkpoint_body.png
+size: 1755,1854
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Folder 6 Copy 2
+  rotate: false
+  xy: 1226, 1639
+  size: 527, 213
+  orig: 527, 213
+  offset: 0, 0
+  index: -1
+Layer 27 Copy 2
+  rotate: false
+  xy: 700, 1644
+  size: 524, 208
+  orig: 524, 208
+  offset: 0, 0
+  index: -1
+Layer 30 Copy
+  rotate: true
+  xy: 801, 696
+  size: 642, 822
+  orig: 642, 822
+  offset: 0, 0
+  index: -1
+Layer 30 Copy 2
+  rotate: true
+  xy: 866, 2
+  size: 692, 862
+  orig: 692, 862
+  offset: 0, 0
+  index: -1
+Layer 30 Copy 3
+  rotate: false
+  xy: 240, 1660
+  size: 458, 192
+  orig: 458, 192
+  offset: 0, 0
+  index: -1
+Layer 30 Copy 4
+  rotate: false
+  xy: 2, 1420
+  size: 515, 238
+  orig: 515, 238
+  offset: 0, 0
+  index: -1
+Layer 33 Copy
+  rotate: true
+  xy: 2, 783
+  size: 594, 797
+  orig: 594, 797
+  offset: 0, 0
+  index: -1
+Layer 33 Copy 2
+  rotate: false
+  xy: 1082, 1340
+  size: 442, 297
+  orig: 442, 297
+  offset: 0, 0
+  index: -1
+Layer 36 Copy
+  rotate: true
+  xy: 2, 14
+  size: 680, 862
+  orig: 680, 862
+  offset: 0, 0
+  index: -1
+Layer 36 Copy 2
+  rotate: false
+  xy: 519, 1379
+  size: 561, 263
+  orig: 561, 263
+  offset: 0, 0
+  index: -1
+Layer 43 Copy
+  rotate: false
+  xy: 2, 1673
+  size: 236, 179
+  orig: 236, 179
+  offset: 0, 0
+  index: -1
+
+checkpoint_body2.png
+size: 1422,874
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+LINES Copy
+  rotate: false
+  xy: 2, 2
+  size: 710, 870
+  orig: 710, 870
+  offset: 0, 0
+  index: -1
+Layer 27 Copy
+  rotate: false
+  xy: 714, 3
+  size: 706, 869
+  orig: 706, 869
+  offset: 0, 0
+  index: -1
