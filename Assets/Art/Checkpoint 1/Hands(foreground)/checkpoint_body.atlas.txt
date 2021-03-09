@@ -1,0 +1,48 @@
+
+checkpoint_body.png
+size: 1587,477
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Folder 6 Copy 2
+  rotate: false
+  xy: 1058, 262
+  size: 527, 213
+  orig: 527, 213
+  offset: 0, 0
+  index: -1
+Layer 27 Copy 2
+  rotate: false
+  xy: 495, 2
+  size: 524, 208
+  orig: 524, 208
+  offset: 0, 0
+  index: -1
+Layer 30 Copy 3
+  rotate: true
+  xy: 2, 17
+  size: 458, 192
+  orig: 458, 192
+  offset: 0, 0
+  index: -1
+Layer 30 Copy 4
+  rotate: false
+  xy: 1058, 22
+  size: 515, 238
+  orig: 515, 238
+  offset: 0, 0
+  index: -1
+Layer 33 Copy 2
+  rotate: true
+  xy: 196, 33
+  size: 442, 297
+  orig: 442, 297
+  offset: 0, 0
+  index: -1
+Layer 36 Copy 2
+  rotate: false
+  xy: 495, 212
+  size: 561, 263
+  orig: 561, 263
+  offset: 0, 0
+  index: -1

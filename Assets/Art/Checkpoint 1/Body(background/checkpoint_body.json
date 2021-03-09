@@ -1,0 +1,75 @@
+{
+"skeleton": {
+	"hash": "SDlzM/fZ3mE2jGys5OjjVZS3EBU",
+	"spine": "3.8.99",
+	"x": -730.71,
+	"y": -3.06,
+	"width": 1420,
+	"height": 1740,
+	"images": "../PSD/images/",
+	"audio": "C:/Users/anton/Desktop/stuff/mayapeli/PSD"
+},
+"bones": [
+	{ "name": "root", "x": 249.26, "y": -192.79 }
+],
+"slots": [
+	{ "name": "Layer 27 Copy", "bone": "root", "attachment": "Layer 27 Copy" },
+	{ "name": "Layer 30 Copy 2", "bone": "root", "attachment": "Layer 30 Copy 2" },
+	{ "name": "BODY2", "bone": "root", "attachment": "Layer 36 Copy" },
+	{ "name": "BODY3", "bone": "root", "attachment": "Layer 30 Copy" },
+	{ "name": "BODY1", "bone": "root", "attachment": "Layer 33 Copy" },
+	{ "name": "LINES Copy", "bone": "root", "attachment": "LINES Copy" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"BODY1": {
+				"Layer 33 Copy": { "x": -270.97, "y": 986.73, "width": 1188, "height": 1594 }
+			},
+			"BODY2": {
+				"Layer 36 Copy": { "x": -268.97, "y": 1051.73, "width": 1360, "height": 1724 }
+			},
+			"BODY3": {
+				"Layer 30 Copy": { "x": -288.97, "y": 1011.23, "width": 1284, "height": 1643 }
+			},
+			"LINES Copy": {
+				"LINES Copy": { "x": -269.97, "y": 1059.73, "width": 1420, "height": 1740 }
+			},
+			"Layer 27 Copy": {
+				"Layer 27 Copy": { "x": -267.97, "y": 1058.73, "width": 1412, "height": 1738 }
+			},
+			"Layer 30 Copy 2": {
+				"Layer 30 Copy 2": { "x": -269.97, "y": 1051.73, "width": 1384, "height": 1724 }
+			}
+		}
+	}
+],
+"animations": {
+	"BODY": {
+		"slots": {
+			"BODY1": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff79", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3.3333, "color": "ffffffff" }
+				]
+			},
+			"BODY2": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff79", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3.3333, "color": "ffffffff" }
+				]
+			},
+			"BODY3": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff79", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3.3333, "color": "ffffffff" }
+				]
+			}
+		}
+	}
+}
+}
