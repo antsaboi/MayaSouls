@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Character_controller : MonoBehaviour
 {
-    // public desimaaliluku nimeltä movingSpeed puolipiste
-    // I am the character controller, yups dubs
+    // Onii-san yameroo ittai sore wa hairanai
 
     public float movingSpeed = 5;
     public float absMinMovingSpeed;
