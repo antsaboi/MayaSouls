@@ -20,7 +20,7 @@ public class MouseDragTarget : MonoBehaviour
         joint.enabled = false;
 
         //This is a test area
-        anim = GetComponentInChildren<Animator>();
+        //anim = GetComponentInChildren<Animator>();
     }
 
     public void Attach(Color color, Vector2 pos, float damping, float frequency)
@@ -28,10 +28,11 @@ public class MouseDragTarget : MonoBehaviour
         if (pos != Vector2.zero) joint.anchor = transform.InverseTransformPoint(pos);
         else joint.anchor = Vector2.zero;
         joint.dampingRatio = damping;
-        joint.frequency = frequency;
         joint.enabled = true;
-        //spriteRenderer.color = color;
-        anim.SetBool("Glowing", true);
+        joint.frequency = frequency;
+
+        // spriteRenderer.color = color;
+        //anim.SetBool("Glowing", true);
     }
 
     public void Move(Transform target)
@@ -43,6 +44,6 @@ public class MouseDragTarget : MonoBehaviour
     {
         joint.enabled = false;
         spriteRenderer.color = Color.white;
-        anim.SetBool("Glowing", false);
+        //anim.SetBool("Glowing", false);
     }
 }
