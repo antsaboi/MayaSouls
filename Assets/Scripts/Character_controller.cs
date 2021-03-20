@@ -6,6 +6,7 @@ public class Character_controller : MonoBehaviour
 {
     // Onii-san yameroo ittai sore wa hairanai
 
+    public PlayerStats stats;
     public float movingSpeed = 5;
     public float absMinMovingSpeed;
     [Range(1, 40)]
@@ -14,10 +15,12 @@ public class Character_controller : MonoBehaviour
     public LayerMask groundMask;
     public float raycastDistance;
 
-    private Rigidbody2D body;
+    [HideInInspector]
+    public Rigidbody2D body;
     private Vector2 currentVelocity;
     private bool isGrounded;
     private Animator animator;
+    [HideInInspector] public bool reduceHP = true;
 
 /*    string state = "IDLE";*/
 
@@ -36,6 +39,8 @@ public class Character_controller : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+        stats.ResetStats();
+        StartHPReduce();
     }
 
     void Update()
@@ -95,6 +100,26 @@ public class Character_controller : MonoBehaviour
         }
 
         return false;
+    }
+
+    void StartHPReduce()
+    {
+        StartCoroutine(HPReduce());
+    }
+
+    IEnumerator HPReduce()
+    {
+        while (stats.HP >= 0)
+        {
+            if (!reduceHP)
+            {
+                yield return new WaitForEndOfFrame();
+                continue;
+            }
+
+            stats.ReduceHPBySecondRate();
+            yield return new WaitForSeconds(1f);
+        }
     }
 
     // Update is called once per frame

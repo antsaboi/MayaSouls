@@ -334,14 +334,14 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 0
     mosaicPosition: {x: 0, y: 0}
   - name: MIDDLE
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 1494964833
     mosaicPosition: {x: 0, y: 0}
   - name: GLOWS
@@ -369,7 +369,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 934523544
     mosaicPosition: {x: 0, y: 0}
   - name: GLOW Copy 2
@@ -397,7 +397,7 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: 0
-    spriteID: 
+    spriteID: 00000000000000000000000000000000
     layerID: 809707295
     mosaicPosition: {x: 0, y: 0}
   - name: GLOW
