@@ -10,6 +10,8 @@ public class MouseDragUser : MonoBehaviour
         mousePoint,
         pivot
     }
+    [Header("Data")]
+    [SerializeField] PlayerStats stats;
 
     [Header("Settings")]
     [SerializeField] AttachType attachType;
@@ -21,6 +23,7 @@ public class MouseDragUser : MonoBehaviour
     private MouseDragTarget currentDragTarget;
     private Dictionary<GameObject, MouseDragTarget> cachedTargets = new Dictionary<GameObject, MouseDragTarget>();
     bool dragging = false;
+    float reduceHPTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -116,6 +119,11 @@ public class MouseDragUser : MonoBehaviour
 
     void MoveTargetWithMouse(Transform target, Vector2 mousePos)
     {
+        if (Time.time > reduceHPTimer)
+        {
+            reduceHPTimer = Time.time + 1f;
+            stats.ReduceHPByPowerUse(true);
+        }
         target.transform.position = mousePos;
         currentDragTarget.Move(target);
     }

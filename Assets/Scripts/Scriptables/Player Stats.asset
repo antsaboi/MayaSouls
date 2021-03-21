@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d478164a570d5b44f94617433ed682bd, type: 3}
   m_Name: Player Stats
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 0
   HPReduceRatePerSecond: 2
-  PowerUseHPReduceAmountPerSecond: 0.25
-  isAlive: 1
+  PowerUseHPReduceAmountPerSecond: 5
+  isAlive: 0

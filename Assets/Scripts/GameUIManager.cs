@@ -8,7 +8,10 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] PlayerStats playerStats;
     [SerializeField] RectTransform hpFill;
     [SerializeField] ParticleSystem fillParticles;
+    [SerializeField] GameObject CheckPointText;
     float fillRate;
+    float fillRateWithPowerUse;
+    float fillRateGeneric;
     float fillAmount = 1;
     float fillStartWidth;
     Coroutine fillRoutine, reduceRoutine;
@@ -29,14 +32,19 @@ public class GameUIManager : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         fillStartWidth = hpFill.rect.width;
         hpFillStartPos = hpFill.anchoredPosition;
-        fillRate = playerStats.HPReduceRatePerSecond / 100;
+        fillRateGeneric = playerStats.HPReduceRatePerSecond / 100;
+        fillRateWithPowerUse = (playerStats.PowerUseHPReduceAmountPerSecond * 2 + playerStats.HPReduceRatePerSecond) / 100;
+        fillRate = fillRateGeneric;
         playerStats.OnHPReduced += SetHPReduceSmooth;
         playerStats.OnDeath += Death;
         playerStats.OnReset += SetHPFillSmooth;
+        fillParticles.Simulate(0.01f);
     }
 
-    void SetHPReduceSmooth()
+    void SetHPReduceSmooth(bool usePower)
     {
+        fillRate = usePower ? fillRateWithPowerUse : fillRateGeneric;
+
         if (fillRoutine != null) StopCoroutine(fillRoutine);
         if (reduceRoutine != null) StopCoroutine(reduceRoutine);
         reduceRoutine = StartCoroutine(HPreduceSmooth());
@@ -92,6 +100,12 @@ public class GameUIManager : MonoBehaviour
     void Death()
     {
         CallAnimation(animationParameters.DeathTriggerName);
+    }
+
+    public void OnCheckPoint()
+    {
+        CheckPointText.SetActive(false);
+        CheckPointText.SetActive(true);
     }
 
     void CallAnimation(string paramName, bool state = true)

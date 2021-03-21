@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
-    Rigidbody2D playerBody;
     [SerializeField] SpriteRenderer distortion;
-    Material distortionMat;
+    [SerializeField] ParticleSystem EnterParticles;
+    [SerializeField] GameEvent CheckPointReached;
+
+    Rigidbody2D playerBody;
     bool isEntered;
 
+    Material distortionMat;
     float distortionSpeed;
     float veloRef;
     Animator anim;
@@ -52,6 +55,7 @@ public class CheckPoint : MonoBehaviour
         {
             anim.SetTrigger("Enter");
             activated = true;
+            CheckPointReached.Raise();
         }
         distortion.material.SetVector("Tiling", new Vector4(-direction.x, -direction.y, 0, 0));
         distortion.material.SetVector("Position", new Vector4(0.01f, 0.01f, 0, 0));
@@ -61,8 +65,6 @@ public class CheckPoint : MonoBehaviour
     public void Exit(Vector2 direction)
     {
         distortion.material.SetVector("Tiling", new Vector4(-direction.x, -direction.y, 0, 0));
-        distortion.material.SetFloat("Speed", 0.02f);
-        distortion.material.SetVector("Position", new Vector4(0.005f, 0.005f, 0, 0));
         isEntered = false;
     }
 
@@ -75,6 +77,13 @@ public class CheckPoint : MonoBehaviour
             if (playerBody is null) playerBody = player.body;
             player.stats.ResetStats();
             player.reduceHP = false;
+
+            EnterParticles.transform.position = collision.transform.position;
+            if (playerBody.velocity.y < 1 && playerBody.velocity.y > -1) EnterParticles.transform.position += Vector3.up;
+            float angle = Mathf.Atan2(-playerBody.velocity.y, -playerBody.velocity.x) * Mathf.Rad2Deg;
+            EnterParticles.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+            EnterParticles.Play();
+            
             Enter(playerBody.velocity.normalized);
         }
     }
@@ -86,6 +95,13 @@ public class CheckPoint : MonoBehaviour
             var player = collision.transform.GetComponentInChildren<Character_controller>();
             if (playerBody is null) playerBody = player.body;
             player.reduceHP = true;
+
+            EnterParticles.transform.position = collision.transform.position;
+            if (playerBody.velocity.y < 1 && playerBody.velocity.y > -1) EnterParticles.transform.position += Vector3.up;
+            float angle = Mathf.Atan2(playerBody.velocity.y, playerBody.velocity.x) * Mathf.Rad2Deg;
+            EnterParticles.transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
+            EnterParticles.Play();
+
             Exit(playerBody.velocity.normalized);
         }
     }
