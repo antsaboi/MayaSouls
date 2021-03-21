@@ -21,7 +21,7 @@ public class GameUIManager : MonoBehaviour
     public struct AnimParameters
     {
         public string DeathTriggerName;
-        public string HPReduceBoolName;
+        public string PowerUseBoolName;
     }
 
     public AnimParameters animationParameters;
@@ -44,6 +44,7 @@ public class GameUIManager : MonoBehaviour
     void SetHPReduceSmooth(bool usePower)
     {
         fillRate = usePower ? fillRateWithPowerUse : fillRateGeneric;
+        if(usePower) CallAnimation(animationParameters.PowerUseBoolName, true);
 
         if (fillRoutine != null) StopCoroutine(fillRoutine);
         if (reduceRoutine != null) StopCoroutine(reduceRoutine);
@@ -59,7 +60,6 @@ public class GameUIManager : MonoBehaviour
 
     IEnumerator HPreduceSmooth()
     {
-        CallAnimation(animationParameters.HPReduceBoolName, true);
         while (fillAmount > playerStats.HP / 100)
         {
             fillAmount = Mathf.MoveTowards(fillAmount, playerStats.HP / 100, fillRate * Time.deltaTime);
@@ -79,7 +79,7 @@ public class GameUIManager : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        CallAnimation(animationParameters.HPReduceBoolName, false);
+        CallAnimation(animationParameters.PowerUseBoolName, false);
     }
 
     IEnumerator HPFillSmooth()
