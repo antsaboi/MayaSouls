@@ -20,8 +20,8 @@ public class CheckPoint : MonoBehaviour
     private void Start()
     {
         distortionMat = distortion.material;
-        distortion.material.SetVector("Tiling", new Vector4(1, 1, 0, 0));
-        distortion.material.SetFloat("Speed", 0.02f);
+        distortion.material.SetVector("Tiling", new Vector4(0.5f, 0.5f, 0, 0));
+        distortion.material.SetFloat("Speed", 0.075f);
         distortion.material.SetVector("Position", new Vector4(0.005f, 0.005f, 0,0));
         anim = GetComponent<Animator>();
     }
