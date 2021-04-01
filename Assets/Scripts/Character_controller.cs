@@ -45,6 +45,8 @@ public class Character_controller : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.instance.isAlive) return;
+
         float xMovement = Input.GetAxisRaw("Horizontal");
 
         if (Mathf.Abs(xMovement) > 0)
@@ -70,6 +72,12 @@ public class Character_controller : MonoBehaviour
         {
             currentVelocity.y = jumpSpeed;
             /*isGrounded = false;*/
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GameManager.instance.GameOver();
+            animator.SetBool("IsAlive", GameManager.instance.isAlive);
         }
 
         body.velocity = currentVelocity;

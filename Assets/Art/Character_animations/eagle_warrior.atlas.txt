@@ -1,314 +1,362 @@
 
 eagle_warrior.png
-size: 1937,1797
+size: 2011,1642
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 BALL1
-  rotate: true
-  xy: 1837, 1187
+  rotate: false
+  xy: 1285, 1556
   size: 88, 84
   orig: 88, 84
   offset: 0, 0
   index: -1
 BALL2
   rotate: false
-  xy: 1834, 298
+  xy: 631, 1562
   size: 89, 78
   orig: 89, 78
   offset: 0, 0
   index: -1
 BALL3
-  rotate: true
-  xy: 1837, 1277
+  rotate: false
+  xy: 1375, 1555
   size: 89, 85
   orig: 89, 85
   offset: 0, 0
   index: -1
 BALL4
-  rotate: true
-  xy: 1837, 868
+  rotate: false
+  xy: 966, 1559
   size: 89, 81
   orig: 89, 81
   offset: 0, 0
   index: -1
 BALL_BACK
   rotate: true
-  xy: 111, 7
+  xy: 436, 1571
   size: 69, 84
   orig: 69, 84
   offset: 0, 0
   index: -1
 BALL_BACK2
   rotate: true
-  xy: 111, 7
+  xy: 436, 1571
   size: 69, 84
   orig: 69, 84
   offset: 0, 0
   index: -1
 Back_lower_foot Copy
   rotate: false
-  xy: 973, 15
+  xy: 204, 1587
   size: 117, 53
   orig: 117, 53
   offset: 0, 0
   index: -1
 Back_upper_foot Copy
-  rotate: false
-  xy: 1837, 1553
+  rotate: true
+  xy: 1651, 1552
   size: 88, 139
   orig: 88, 139
   offset: 0, 0
   index: -1
 Folder 2 Copy 10
-  rotate: false
-  xy: 1803, 496
+  rotate: true
+  xy: 184, 1473
   size: 105, 244
   orig: 105, 244
   offset: 0, 0
   index: -1
 Folder 2 Copy 11
   rotate: true
-  xy: 398, 25
+  xy: 565, 1450
   size: 109, 237
   orig: 109, 237
   offset: 0, 0
   index: -1
 Folder 2 Copy 12
-  rotate: true
-  xy: 290, 144
+  rotate: false
+  xy: 804, 1444
   size: 234, 113
   orig: 234, 113
   offset: 0, 0
   index: -1
 Folder 2 Copy 13
-  rotate: false
-  xy: 687, 210
+  rotate: true
+  xy: 553, 1277
   size: 171, 192
   orig: 171, 192
   offset: 0, 0
   index: -1
 Folder 2 Copy 2
-  rotate: true
-  xy: 687, 20
+  rotate: false
+  xy: 363, 1284
   size: 188, 171
   orig: 188, 171
   offset: 0, 0
   index: -1
-GHOST
-  rotate: true
-  xy: 2, 785
-  size: 1010, 1833
-  orig: 1010, 1833
-  offset: 0, 0
-  index: -1
 Layer 118
   rotate: true
-  xy: 2, 263
+  xy: 1040, 1439
   size: 115, 286
   orig: 115, 286
   offset: 0, 0
   index: -1
 Layer 2 Copy
-  rotate: true
-  xy: 1837, 1072
+  rotate: false
+  xy: 1170, 1557
   size: 113, 83
   orig: 113, 83
   offset: 0, 0
   index: -1
 Layer 4 Copy
   rotate: true
-  xy: 868, 429
+  xy: 2, 708
   size: 354, 491
   orig: 354, 491
   offset: 0, 0
   index: -1
-ROPE_BACK_LOWER
+Layer 6
   rotate: false
-  xy: 244, 36
+  xy: 1845, 1375
+  size: 161, 161
+  orig: 161, 161
+  offset: 0, 0
+  index: -1
+Layer 7
+  rotate: false
+  xy: 2, 1332
+  size: 161, 161
+  orig: 161, 161
+  offset: 0, 0
+  index: -1
+ROPE_BACK_LOWER
+  rotate: true
+  xy: 2, 1608
   size: 32, 40
   orig: 32, 40
   offset: 0, 0
   index: -1
 ROPE_BACK_TOP
   rotate: false
-  xy: 2, 7
+  xy: 522, 1571
   size: 107, 69
   orig: 107, 69
   offset: 0, 0
   index: -1
 ROPE_FRONT
-  rotate: true
-  xy: 637, 88
+  rotate: false
+  xy: 109, 1600
   size: 46, 40
   orig: 46, 40
   offset: 0, 0
   index: -1
 SLEEVE FRONT Copy
   rotate: false
-  xy: 1589, 488
+  xy: 1797, 1121
   size: 212, 252
   orig: 212, 252
   offset: 0, 0
   index: -1
 SLEEVE FRONT back
   rotate: true
-  xy: 1360, 7
+  xy: 2, 1093
   size: 215, 261
   orig: 215, 261
   offset: 0, 0
   index: -1
 SQUARE
   rotate: true
-  xy: 1623, 2
+  xy: 1895, 1538
   size: 102, 107
   orig: 102, 107
   offset: 0, 0
   index: -1
 SWORD HAND
-  rotate: true
-  xy: 1361, 224
+  rotate: false
+  xy: 553, 1026
   size: 559, 226
   orig: 559, 226
   offset: 0, 0
   index: -1
 SWORD HAND_ARM
   rotate: true
-  xy: 414, 404
+  xy: 1079, 398
   size: 379, 452
   orig: 379, 452
   offset: 0, 0
   index: -1
 arm
-  rotate: false
-  xy: 1837, 742
+  rotate: true
+  xy: 840, 1560
   size: 80, 124
   orig: 80, 124
   offset: 0, 0
   index: -1
 back_hand Copy
   rotate: false
-  xy: 197, 32
+  xy: 157, 1596
   size: 45, 44
   orig: 45, 44
   offset: 0, 0
   index: -1
+face_dark
+  rotate: true
+  xy: 165, 1310
+  size: 161, 196
+  orig: 161, 196
+  offset: 0, 0
+  index: -1
 foot
   rotate: true
-  xy: 414, 136
+  xy: 1114, 935
   size: 266, 271
   orig: 266, 271
   offset: 0, 0
   index: -1
 front_hand Copy
-  rotate: false
-  xy: 1837, 1694
+  rotate: true
+  xy: 1792, 1542
   size: 98, 101
   orig: 98, 101
   offset: 0, 0
   index: -1
 front_lower_foot Copy
   rotate: false
-  xy: 860, 8
+  xy: 323, 1580
   size: 111, 60
   orig: 111, 60
   offset: 0, 0
   index: -1
 front_upper_foot Copy
-  rotate: false
-  xy: 1224, 268
+  rotate: true
+  xy: 1328, 1429
   size: 124, 159
   orig: 124, 159
   offset: 0, 0
   index: -1
 glow
-  rotate: true
-  xy: 1834, 378
+  rotate: false
+  xy: 722, 1561
   size: 116, 79
   orig: 116, 79
   offset: 0, 0
   index: -1
 head
-  rotate: false
-  xy: 1148, 16
+  rotate: true
+  xy: 1545, 1191
   size: 210, 250
   orig: 210, 250
   offset: 0, 0
   index: -1
 hood back
   rotate: true
-  xy: 868, 290
+  xy: 1489, 1403
   size: 137, 354
   orig: 137, 354
   offset: 0, 0
   index: -1
 jade Copy
-  rotate: false
-  xy: 284, 9
+  rotate: true
+  xy: 430, 1457
   size: 112, 133
   orig: 112, 133
   offset: 0, 0
   index: -1
 lower foot
   rotate: false
-  xy: 1732, 5
+  xy: 2, 1495
   size: 180, 99
   orig: 180, 99
   offset: 0, 0
   index: -1
 lower foot Copy
-  rotate: true
-  xy: 1837, 1368
+  rotate: false
+  xy: 1466, 1555
   size: 183, 85
   orig: 183, 85
   offset: 0, 0
   index: -1
 mask
   rotate: true
-  xy: 1623, 106
+  xy: 747, 1262
   size: 180, 269
   orig: 180, 269
   offset: 0, 0
   index: -1
-palm
+motion_blur
   rotate: false
-  xy: 1837, 959
+  xy: 2, 262
+  size: 568, 394
+  orig: 568, 394
+  offset: 0, 0
+  index: -1
+motion_blur2
+  rotate: false
+  xy: 495, 658
+  size: 582, 366
+  orig: 582, 366
+  offset: 0, 0
+  index: -1
+motion_line
+  rotate: false
+  xy: 1533, 2
+  size: 395, 775
+  orig: 395, 775
+  offset: 0, 0
+  index: -1
+palm
+  rotate: true
+  xy: 1057, 1558
   size: 82, 111
   orig: 82, 111
   offset: 0, 0
   index: -1
 skirt
-  rotate: false
-  xy: 2, 380
+  rotate: true
+  xy: 1387, 779
   size: 410, 403
   orig: 410, 403
   offset: 0, 0
   index: -1
 sleeve back
   rotate: true
-  xy: 1589, 288
+  xy: 1300, 1203
   size: 198, 243
   orig: 198, 243
   offset: 0, 0
   index: -1
 thigh back
   rotate: true
-  xy: 860, 70
+  xy: 265, 1064
   size: 218, 286
   orig: 218, 286
   offset: 0, 0
   index: -1
 thigh front
   rotate: true
-  xy: 2, 78
+  xy: 1018, 1254
   size: 183, 280
   orig: 183, 280
   offset: 0, 0
   index: -1
 weapon_shine
-  rotate: false
-  xy: 1092, 5
+  rotate: true
+  xy: 44, 1603
   size: 37, 63
   orig: 37, 63
+  offset: 0, 0
+  index: -1
+
+eagle_warrior2.png
+size: 1014,1837
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+GHOST
+  rotate: false
+  xy: 2, 2
+  size: 1010, 1833
+  orig: 1010, 1833
   offset: 0, 0
   index: -1
