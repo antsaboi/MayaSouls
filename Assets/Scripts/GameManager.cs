@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField] GameEvent GameStarted;
     [SerializeField] GameEvent PlayerDeath;
+    public bool isAlive = true;
 
     private void Awake()
     {
@@ -17,5 +18,11 @@ public class GameManager : MonoBehaviour
     {
         //Do something
         
+    }
+
+    public void GameOver()
+    {
+        isAlive = false;
+        PlayerDeath?.Raise();
     }
 }

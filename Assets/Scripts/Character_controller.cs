@@ -45,6 +45,8 @@ public class Character_controller : MonoBehaviour
 
     void Update()
     {
+        if (!GameManager.instance.isAlive) return;
+
         float xMovement = Input.GetAxisRaw("Horizontal");
 
         if (Mathf.Abs(xMovement) > 0)
@@ -72,7 +74,19 @@ public class Character_controller : MonoBehaviour
             /*isGrounded = false;*/
         }
 
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GameManager.instance.GameOver();
+            animator.SetBool("IsAlive", GameManager.instance.isAlive);
+        }
+
         body.velocity = currentVelocity;
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            animator.SetTrigger("Attack");
+            //body.velocity = Vector2.zero;
+        }
 
         animator.SetFloat("XSpeed", Mathf.Abs(currentVelocity.x));
         animator.SetFloat("YSpeed", currentVelocity.y);
