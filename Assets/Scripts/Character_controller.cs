@@ -82,6 +82,12 @@ public class Character_controller : MonoBehaviour
 
         body.velocity = currentVelocity;
 
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            animator.SetTrigger("Attack");
+            //body.velocity = Vector2.zero;
+        }
+
         animator.SetFloat("XSpeed", Mathf.Abs(currentVelocity.x));
         animator.SetFloat("YSpeed", currentVelocity.y);
     }
