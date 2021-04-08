@@ -491,7 +491,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2523808670418810615}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0600624, y: -2.6156163, z: 3.0232947}
+  m_LocalPosition: {x: 1.63, y: -2.45, z: 3.0232947}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2523808671188436689}
@@ -524,7 +524,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d4eee9d23e8bed64c993afe261ef715f, type: 2}
+  - {fileID: 2100000, guid: 058d47b3327ff3c418a6a9e05b2052bf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -558,7 +558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 9bd58a89562d2de4f8b857a842e76c51, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: 3e2d222c5d1538e4c95954f32acce8a5, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
@@ -879,7 +879,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2523808670744100895}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0500603, y: -2.4856164, z: 3.0232947}
+  m_LocalPosition: {x: 1.63, y: -2.4856164, z: 3.0232947}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2523808671188436689}
@@ -912,7 +912,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 21ac64fa58b614e4fa9b6b975dbefb36, type: 2}
+  - {fileID: 2100000, guid: 11d4629f7806d764c9658887ad090d3a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -946,7 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: 22397cc0c39111a4ba8a945ef7a3bae4, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: c1f1aad4675cb4d4581ae8a7d1c27d7f, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0

@@ -1,0 +1,27 @@
+
+checkpoint_body.png
+size: 2025,863
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 700, 3
+  size: 692, 858
+  orig: 692, 858
+  offset: 0, 0
+  index: -1
+body_glow
+  rotate: false
+  xy: 1394, 50
+  size: 629, 811
+  orig: 629, 811
+  offset: 0, 0
+  index: -1
+body_lines
+  rotate: false
+  xy: 2, 2
+  size: 696, 859
+  orig: 696, 859
+  offset: 0, 0
+  index: -1

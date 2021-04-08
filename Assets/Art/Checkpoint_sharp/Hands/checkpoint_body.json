@@ -1,0 +1,49 @@
+{
+"skeleton": {
+	"hash": "/Itf1cVDxs4lP2u1iszSZUNLdNE",
+	"spine": "3.8.99",
+	"x": -665.56,
+	"y": -0.79,
+	"width": 1391,
+	"height": 1717,
+	"images": "C:/Users/anton/Desktop/stuff/mayapeli/PSD/images/",
+	"audio": "C:\\Users\\anton\\Desktop\\stuff\\mayapeli\\PSD"
+},
+"bones": [
+	{ "name": "root", "x": 11.54, "y": 764.87 }
+],
+"slots": [
+	{ "name": "hands", "bone": "root", "attachment": "hands" },
+	{ "name": "hands_glow", "bone": "root", "attachment": "hands_glow" },
+	{ "name": "hands_lines", "bone": "root", "attachment": "hands_lines" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"hands": {
+				"hands": { "x": 1.4, "y": -273.16, "width": 1047, "height": 417 }
+			},
+			"hands_glow": {
+				"hands_glow": { "x": 3.9, "y": -286.16, "width": 916, "height": 383 }
+			},
+			"hands_lines": {
+				"hands_lines": { "x": 1.9, "y": -277.66, "width": 1054, "height": 426 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"hands_glow": {
+				"color": [
+					{ "color": "ffffffff", "curve": 0.25, "c3": 0.75 },
+					{ "time": 1.6667, "color": "ffffff59", "curve": 0.25, "c3": 0.75 },
+					{ "time": 3.3333, "color": "ffffffff" }
+				]
+			}
+		}
+	}
+}
+}

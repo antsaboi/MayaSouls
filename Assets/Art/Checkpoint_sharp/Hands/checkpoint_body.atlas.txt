@@ -1,0 +1,27 @@
+
+checkpoint_body.png
+size: 1517,217
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hands
+  rotate: false
+  xy: 531, 6
+  size: 524, 209
+  orig: 524, 209
+  offset: 0, 0
+  index: -1
+hands_glow
+  rotate: false
+  xy: 1057, 23
+  size: 458, 192
+  orig: 458, 192
+  offset: 0, 0
+  index: -1
+hands_lines
+  rotate: false
+  xy: 2, 2
+  size: 527, 213
+  orig: 527, 213
+  offset: 0, 0
+  index: -1

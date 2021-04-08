@@ -89,6 +89,45 @@ TextureImporter:
   - first:
       213: -6826458673344594490
     second: Temple_tileset_37
+  - first:
+      213: 1170861841448892535
+    second: Temple_tileset_8
+  - first:
+      213: -2725856995639051760
+    second: Temple_tileset_9
+  - first:
+      213: -3701046700336078068
+    second: Temple_tileset_18
+  - first:
+      213: -6274883221871666847
+    second: Temple_tileset_19
+  - first:
+      213: -855467930718123893
+    second: Temple_tileset_20
+  - first:
+      213: 553370741064632206
+    second: Temple_tileset_21
+  - first:
+      213: 7329799145409005831
+    second: Temple_tileset_28
+  - first:
+      213: 1925413795949447585
+    second: Temple_tileset_29
+  - first:
+      213: -7790569610031746936
+    second: Temple_tileset_30
+  - first:
+      213: -3998904286838635698
+    second: Temple_tileset_38
+  - first:
+      213: 3053162813889284775
+    second: Temple_tileset_39
+  - first:
+      213: 7521400568578865314
+    second: Temple_tileset_40
+  - first:
+      213: 2340369724818722408
+    second: Temple_tileset_41
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -782,6 +821,279 @@ TextureImporter:
       bones: []
       spriteID: 6cd3965310c8341a0800000000000000
       internalID: -6826458673344594490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_8
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 250
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 778fe9c24acbf3010800000000000000
+      internalID: 1170861841448892535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_9
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01abb62318fcb2ad0800000000000000
+      internalID: -2725856995639051760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_18
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c03265192ad33acc0800000000000000
+      internalID: -3701046700336078068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_19
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169d74994f22be8a0800000000000000
+      internalID: -6274883221871666847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_20
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b88cec01374c024f0800000000000000
+      internalID: -855467930718123893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_21
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 350
+        width: 100
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e878042d1c7fda700800000000000000
+      internalID: 553370741064632206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_28
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 250
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709c011ec7da8b560800000000000000
+      internalID: 7329799145409005831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_29
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 350
+        width: 100
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9043965a178ba10800000000000000
+      internalID: 1925413795949447585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_30
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880ba14473652e390800000000000000
+      internalID: -7790569610031746936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_38
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43423cfcb90188c0800000000000000
+      internalID: -3998904286838635698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_39
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa8d4327630f5a20800000000000000
+      internalID: 3053162813889284775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_40
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8709f87f1616860800000000000000
+      internalID: 7521400568578865314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Temple_tileset_41
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e06ea6dd9aa7020800000000000000
+      internalID: 2340369724818722408
       vertices: []
       indices: 
       edges: []
