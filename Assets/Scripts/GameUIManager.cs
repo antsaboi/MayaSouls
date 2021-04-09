@@ -9,9 +9,7 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] RectTransform hpFill;
     [SerializeField] ParticleSystem fillParticles;
     [SerializeField] GameObject CheckPointText;
-    float fillRate;
-    float fillRateWithPowerUse;
-    float fillRateGeneric;
+    [SerializeField] float fillRate;
     float fillAmount = 1;
     float fillStartWidth;
     Coroutine fillRoutine, reduceRoutine;
@@ -32,59 +30,38 @@ public class GameUIManager : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         fillStartWidth = hpFill.rect.width;
         hpFillStartPos = hpFill.anchoredPosition;
-        fillRateGeneric = playerStats.HPReduceRatePerSecond / 100;
-        fillRateWithPowerUse = (playerStats.PowerUseHPReduceAmountPerSecond * 2 + playerStats.HPReduceRatePerSecond) / 100;
-        fillRate = fillRateGeneric;
+
         playerStats.OnHPReduced += SetHPReduceSmooth;
         playerStats.OnDeath += Death;
         playerStats.OnReset += SetHPFillSmooth;
+
         fillParticles.Simulate(0.01f);
     }
 
-    void SetHPReduceSmooth(bool usePower)
+    private void Update()
     {
-        fillRate = usePower ? fillRateWithPowerUse : fillRateGeneric;
-        if(usePower) CallAnimation(animationParameters.PowerUseBoolName, true);
-
-        if (fillRoutine != null) StopCoroutine(fillRoutine);
-        if (reduceRoutine != null) StopCoroutine(reduceRoutine);
-        reduceRoutine = StartCoroutine(HPreduceSmooth());
-    }
-
-    void SetHPFillSmooth()
-    {
-        if (reduceRoutine != null) StopCoroutine(reduceRoutine);
-        if (fillRoutine != null) StopCoroutine(fillRoutine);
-        fillRoutine = StartCoroutine(HPFillSmooth());
-    }
-
-    IEnumerator HPreduceSmooth()
-    {
-        while (fillAmount > playerStats.HP / 100)
+        //HP has reduced
+        if (playerStats.HP / 100 < fillAmount)
         {
             fillAmount = Mathf.MoveTowards(fillAmount, playerStats.HP / 100, fillRate * Time.deltaTime);
             hpFill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, fillStartWidth * fillAmount);
             hpFill.ForceUpdateRectTransforms();
             float delta = fillStartWidth - (fillStartWidth * fillAmount);
-            hpFill.anchoredPosition = new Vector2(hpFillStartPos.x - delta/2, hpFillStartPos.y);
+            hpFill.anchoredPosition = new Vector2(hpFillStartPos.x - delta / 2, hpFillStartPos.y);
+
             fillParticles.transform.position = new Vector2(hpFill.transform.position.x + (3.4f * fillAmount), hpFill.transform.position.y);
             fillParticles.Play(true);
 
-            if (playerStats.HP <= 0) {
+            if (playerStats.HP <= 0)
+            {
                 hpFill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
                 hpFill.ForceUpdateRectTransforms();
                 fillParticles.transform.position = new Vector2(hpFill.transform.position.x, hpFill.transform.position.y);
-                break;
             }
-            yield return new WaitForEndOfFrame();
         }
 
-        CallAnimation(animationParameters.PowerUseBoolName, false);
-    }
-
-    IEnumerator HPFillSmooth()
-    {
-        while (fillAmount < playerStats.HP / 100)
+        //HP has been added
+        if (playerStats.HP / 100 > fillAmount)
         {
             fillAmount = Mathf.MoveTowards(fillAmount, playerStats.HP / 100, 0.2f * Time.deltaTime);
             hpFill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, fillStartWidth * fillAmount);
@@ -92,9 +69,17 @@ public class GameUIManager : MonoBehaviour
             float delta = fillStartWidth - (fillStartWidth * fillAmount);
             hpFill.anchoredPosition = new Vector2(hpFillStartPos.x - delta / 2, hpFillStartPos.y);
             fillParticles.transform.position = new Vector2(hpFill.transform.position.x + (3.4f * fillAmount), hpFill.transform.position.y);
-            yield return new WaitForEndOfFrame();
         }
-        fillParticles.Simulate(0.01f);
+    }
+
+    void SetHPReduceSmooth(bool usePower)
+    {
+
+    }
+
+    void SetHPFillSmooth()
+    {
+
     }
 
     void Death()

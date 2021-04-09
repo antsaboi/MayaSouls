@@ -122,7 +122,7 @@ public class MouseDragUser : MonoBehaviour
     {
         if (Time.time > reduceHPTimer)
         {
-            reduceHPTimer = Time.time + 1f;
+            reduceHPTimer = Time.time + stats.hpReduceInterval;
             stats.ReduceHPByPowerUse(true);
         }
         target.transform.position = mousePos;

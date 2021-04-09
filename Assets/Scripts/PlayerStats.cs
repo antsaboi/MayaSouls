@@ -8,9 +8,10 @@ public class PlayerStats : ScriptableObject
     [Range(0,100)]
     public float HP = 100;
     [Range(0, 10)]
-    public float HPReduceRatePerSecond = 0.5f;
+    public float HPReduceAmount = 0.5f;
     [Range(0, 5)]
-    public float PowerUseHPReduceAmountPerSecond = 0.25f;
+    public float PowerUseHPReduceAmount = 0.25f;
+    public float hpReduceInterval;
     public bool isAlive = true;
     public System.Action OnDeath, OnReset;
     public delegate void HPReduce(bool usePower);
@@ -34,7 +35,7 @@ public class PlayerStats : ScriptableObject
     public float ReduceHPBySecondRate(bool usePower = false)
     {
         if (!IsAlive()) return 0;
-        HP -= HPReduceRatePerSecond;
+        HP -= HPReduceAmount;
         OnHPReduced?.Invoke(usePower);
         return HP;
     }
@@ -42,7 +43,7 @@ public class PlayerStats : ScriptableObject
     public float ReduceHPByPowerUse(bool usePower = false)
     {
         if (!IsAlive()) return 0;
-        HP -= PowerUseHPReduceAmountPerSecond;
+        HP -= PowerUseHPReduceAmount;
         OnHPReduced?.Invoke(usePower);
         return HP;
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 public class Character_controller : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Character_controller : MonoBehaviour
     private bool isGrounded;
     private Animator animator;
     [HideInInspector] public bool reduceHP = true;
+    public SkeletonMecanim spine;
 
 /*    string state = "IDLE";*/
 
@@ -61,11 +63,11 @@ public class Character_controller : MonoBehaviour
 
         if (xMovement > 0.1f)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            spine.transform.localScale = new Vector3(1, 1, 1);
         }
         else if (xMovement < -0.1f)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            spine.transform.localScale = new Vector3(-1, 1, 1);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -132,7 +134,7 @@ public class Character_controller : MonoBehaviour
             }
 
             stats.ReduceHPBySecondRate();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(stats.hpReduceInterval);
         }
     }
 

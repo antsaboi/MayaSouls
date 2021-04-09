@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attack 1
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6208044167398084142}
@@ -3648,10 +3648,6 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: -4796640313901286876}
-    second:
-    - {fileID: -5936056699277362857}
-    - {fileID: 5517928689954892902}
   - first: {fileID: -6459766802048849318}
     second:
     - {fileID: -3018335079970532296}
@@ -3660,6 +3656,10 @@ AnimatorStateMachine:
     second:
     - {fileID: -2309353505646568318}
     - {fileID: 782323344646576270}
+  - first: {fileID: -4796640313901286876}
+    second:
+    - {fileID: -5936056699277362857}
+    - {fileID: 5517928689954892902}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -220, y: -60, z: 0}
   m_EntryPosition: {x: -220, y: -120, z: 0}
@@ -5100,7 +5100,7 @@ AnimatorStateTransition:
   m_ExitTime: 0.699988
   m_HasExitTime: 0
   m_HasFixedDuration: 1
-  m_InterruptionSource: 0
+  m_InterruptionSource: 1
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!1102 &5019910304763710965
