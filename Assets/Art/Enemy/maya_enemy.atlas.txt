@@ -1,0 +1,300 @@
+
+maya_enemy.png
+size: 1986,993
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ARM_BACK_MIDDLE
+  rotate: false
+  xy: 1637, 24
+  size: 109, 120
+  orig: 109, 120
+  offset: 0, 0
+  index: -1
+ARM_BACK_MIDDLE_BLACK
+  rotate: true
+  xy: 1387, 551
+  size: 75, 74
+  orig: 75, 74
+  offset: 0, 0
+  index: -1
+ARM_BACK_MIDDLE_GLOW
+  rotate: true
+  xy: 1387, 455
+  size: 76, 89
+  orig: 76, 89
+  offset: 0, 0
+  index: -1
+ARM_BACK_UPPER
+  rotate: false
+  xy: 1876, 267
+  size: 107, 181
+  orig: 107, 181
+  offset: 0, 0
+  index: -1
+ARM_BACK_UPPER_BLACK
+  rotate: false
+  xy: 1610, 458
+  size: 60, 103
+  orig: 60, 103
+  offset: 0, 0
+  index: -1
+ARM_BACK_UPPER_GLOW
+  rotate: true
+  xy: 1550, 563
+  size: 80, 145
+  orig: 80, 145
+  offset: 0, 0
+  index: -1
+BODY
+  rotate: false
+  xy: 760, 241
+  size: 260, 293
+  orig: 260, 293
+  offset: 0, 0
+  index: -1
+BODY_BLACK
+  rotate: true
+  xy: 642, 4
+  size: 227, 222
+  orig: 227, 222
+  offset: 0, 0
+  index: -1
+BODY_GLOW
+  rotate: true
+  xy: 1431, 718
+  size: 273, 267
+  orig: 273, 267
+  offset: 0, 0
+  index: -1
+FOOT_BACK_LOWER
+  rotate: true
+  xy: 1463, 533
+  size: 183, 85
+  orig: 183, 85
+  offset: 0, 0
+  index: -1
+FOOT_BACK_LOWER_BLACK
+  rotate: false
+  xy: 1314, 628
+  size: 147, 75
+  orig: 147, 75
+  offset: 0, 0
+  index: -1
+FOOT_BACK_LOWER_GLOW
+  rotate: false
+  xy: 1550, 645
+  size: 147, 71
+  orig: 147, 71
+  offset: 0, 0
+  index: -1
+FOOT_BACK_MIDDLE
+  rotate: false
+  xy: 1314, 705
+  size: 115, 286
+  orig: 115, 286
+  offset: 0, 0
+  index: -1
+FOOT_BACK_MIDDLE_BLACK
+  rotate: false
+  xy: 1888, 450
+  size: 92, 159
+  orig: 92, 159
+  offset: 0, 0
+  index: -1
+FOOT_BACK_MIDDLE_GLOW
+  rotate: false
+  xy: 866, 12
+  size: 101, 227
+  orig: 101, 227
+  offset: 0, 0
+  index: -1
+FOOT_FRONT
+  rotate: false
+  xy: 1672, 462
+  size: 180, 99
+  orig: 180, 99
+  offset: 0, 0
+  index: -1
+FOOT_FRONT_BLACK
+  rotate: false
+  xy: 1478, 456
+  size: 130, 75
+  orig: 130, 75
+  offset: 0, 0
+  index: -1
+FOOT_FRONT_GLOW
+  rotate: true
+  xy: 1550, 6
+  size: 138, 85
+  orig: 138, 85
+  offset: 0, 0
+  index: -1
+FOOT_FRONT_MIDDLE
+  rotate: true
+  xy: 1700, 725
+  size: 266, 271
+  orig: 266, 271
+  offset: 0, 0
+  index: -1
+FOOT_FRONT_MIDDLE_BLACK
+  rotate: false
+  xy: 1540, 281
+  size: 149, 173
+  orig: 149, 173
+  offset: 0, 0
+  index: -1
+FOOT_FRONT_MIDDLE_GLOW
+  rotate: false
+  xy: 175, 5
+  size: 183, 209
+  orig: 183, 209
+  offset: 0, 0
+  index: -1
+HAND_FRONT_MIDDLE
+  rotate: false
+  xy: 399, 536
+  size: 379, 455
+  orig: 379, 455
+  offset: 0, 0
+  index: -1
+HAND_FRONT_MIDDLE_BLACK
+  rotate: true
+  xy: 1550, 166
+  size: 113, 138
+  orig: 113, 138
+  offset: 0, 0
+  index: -1
+HAND_FRONT_MIDDLE_GLOW
+  rotate: true
+  xy: 1691, 172
+  size: 135, 176
+  orig: 135, 176
+  offset: 0, 0
+  index: -1
+HAND_FRONT_UPPER
+  rotate: true
+  xy: 1387, 280
+  size: 168, 151
+  orig: 168, 151
+  offset: 0, 0
+  index: -1
+HAND_FRONT_UPPER_BLACK
+  rotate: false
+  xy: 1748, 85
+  size: 97, 85
+  orig: 97, 85
+  offset: 0, 0
+  index: -1
+HAND_FRONT_UPPER_GLOW
+  rotate: true
+  xy: 1888, 611
+  size: 112, 96
+  orig: 112, 96
+  offset: 0, 0
+  index: -1
+HEAD
+  rotate: false
+  xy: 2, 2
+  size: 171, 212
+  orig: 171, 212
+  offset: 0, 0
+  index: -1
+HEAD_BLACK
+  rotate: true
+  xy: 1691, 309
+  size: 151, 183
+  orig: 151, 183
+  offset: 0, 0
+  index: -1
+HEAD_GLOW
+  rotate: true
+  xy: 1700, 566
+  size: 157, 186
+  orig: 157, 186
+  offset: 0, 0
+  index: -1
+NECK
+  rotate: true
+  xy: 1869, 146
+  size: 119, 113
+  orig: 119, 113
+  offset: 0, 0
+  index: -1
+NECK BACK
+  rotate: false
+  xy: 1748, 15
+  size: 66, 68
+  orig: 66, 68
+  offset: 0, 0
+  index: -1
+NECK GLOW
+  rotate: true
+  xy: 780, 542
+  size: 42, 65
+  orig: 42, 65
+  offset: 0, 0
+  index: -1
+PALM_BACK
+  rotate: false
+  xy: 1022, 254
+  size: 144, 330
+  orig: 144, 330
+  offset: 0, 0
+  index: -1
+PALM_BACK_BLURRED
+  rotate: false
+  xy: 1168, 279
+  size: 217, 347
+  orig: 217, 347
+  offset: 0, 0
+  index: -1
+PALM_FRONT_BLUR
+  rotate: false
+  xy: 399, 233
+  size: 359, 301
+  orig: 359, 301
+  offset: 0, 0
+  index: -1
+Shape 1
+  rotate: true
+  xy: 1158, 628
+  size: 363, 154
+  orig: 363, 154
+  offset: 0, 0
+  index: -1
+THIGH_BACK
+  rotate: true
+  xy: 969, 18
+  size: 221, 287
+  orig: 221, 287
+  offset: 0, 0
+  index: -1
+THIGH_FRONT
+  rotate: true
+  xy: 360, 28
+  size: 186, 280
+  orig: 186, 280
+  offset: 0, 0
+  index: -1
+motion_line
+  rotate: false
+  xy: 2, 216
+  size: 395, 775
+  orig: 395, 775
+  offset: 0, 0
+  index: -1
+palm Copy
+  rotate: false
+  xy: 1258, 4
+  size: 290, 273
+  orig: 290, 273
+  offset: 0, 0
+  index: -1
+skirt Copy
+  rotate: false
+  xy: 780, 586
+  size: 376, 405
+  orig: 376, 405
+  offset: 0, 0
+  index: -1
