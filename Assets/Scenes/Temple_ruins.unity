@@ -82514,14 +82514,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 445994230}
     m_Modifications:
-    - target: {fileID: 1348047286, guid: 44c762c6139ff4d49bf5de6ba669fbd2, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: c3425f81fa28c35448e709334a5f0e34, type: 2}
-    - target: {fileID: 1348047288, guid: 44c762c6139ff4d49bf5de6ba669fbd2, type: 3}
-      propertyPath: attackDistance
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2030625806809913509, guid: 44c762c6139ff4d49bf5de6ba669fbd2,
         type: 3}
       propertyPath: m_RootOrder
@@ -82576,26 +82568,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3055648632582451285, guid: 44c762c6139ff4d49bf5de6ba669fbd2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3055648632582451285, guid: 44c762c6139ff4d49bf5de6ba669fbd2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3055648632582451285, guid: 44c762c6139ff4d49bf5de6ba669fbd2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3055648632582451286, guid: 44c762c6139ff4d49bf5de6ba669fbd2,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3362700283225063415, guid: 44c762c6139ff4d49bf5de6ba669fbd2,
         type: 3}

@@ -267,7 +267,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 3362700283225063415}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c3425f81fa28c35448e709334a5f0e34, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -301,3 +301,4 @@ MonoBehaviour:
   moveSpeed: 1.5
   chargeForce: 5
   chargeDistance: 5
+  attackDistance: 2
