@@ -237,9 +237,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1300612663
+  m_SortingLayer: 3
+  m_SortingOrder: 5
   m_Sprite: {fileID: -5246478869367956150, guid: 413cdcc082936aa4fb8fb1cca1566809,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -281,6 +281,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3531298530632083671}
   - component: {fileID: 3531298530632083668}
+  - component: {fileID: 1546234592}
+  - component: {fileID: 1546234591}
   m_Layer: 0
   m_Name: TRAPS_7
   m_TagString: Untagged
@@ -339,9 +341,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -252458209
+  m_SortingLayer: 6
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7720703344680693213, guid: 413cdcc082936aa4fb8fb1cca1566809,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -354,6 +356,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &1546234592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531298530632083670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9c67ad926e57e4ba80878dbc3313e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1546234591
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531298530632083670}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0012767762, y: 0.18}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.50982136, y: 0.013740865}
+    oldSize: {x: 0.13, y: 0.94}
+    newSize: {x: 0.13, y: 0.94}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.06, y: 0.56}
+  m_EdgeRadius: 0
 --- !u!1 &3531298530732017604
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,6 +485,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3531298531332289455}
   - component: {fileID: 3531298531332289452}
+  - component: {fileID: 1427615397}
+  - component: {fileID: 1427615396}
   m_Layer: 0
   m_Name: TRAPS_6
   m_TagString: Untagged
@@ -503,9 +545,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -252458209
+  m_SortingLayer: 6
+  m_SortingOrder: 3
   m_Sprite: {fileID: 87064329433981160, guid: 413cdcc082936aa4fb8fb1cca1566809, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -517,6 +559,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &1427615397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531298531332289454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9c67ad926e57e4ba80878dbc3313e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1427615396
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531298531332289454}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0018012449, y: 0.18}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.48614427, y: 0.014976298}
+    oldSize: {x: 0.13, y: 0.94}
+    newSize: {x: 0.13, y: 0.94}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.06, y: 0.56}
+  m_EdgeRadius: 0
 --- !u!1 &3531298531376514997
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +607,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3531298531376514994}
   - component: {fileID: 3531298531376514995}
+  - component: {fileID: 1781213672}
+  - component: {fileID: 1781213671}
   m_Layer: 0
   m_Name: TRAPS_8
   m_TagString: Untagged
@@ -585,9 +667,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -252458209
+  m_SortingLayer: 6
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7318295551472760259, guid: 413cdcc082936aa4fb8fb1cca1566809,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -600,3 +682,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &1781213672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531298531376514997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9c67ad926e57e4ba80878dbc3313e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1781213671
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531298531376514997}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0021136478, y: 0.18}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.51625884, y: 0.0143091325}
+    oldSize: {x: 0.13, y: 0.94}
+    newSize: {x: 0.13, y: 0.94}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.06, y: 0.56}
+  m_EdgeRadius: 0

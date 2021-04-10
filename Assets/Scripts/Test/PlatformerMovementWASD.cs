@@ -278,7 +278,7 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
             }
         }
         else {
-            if (playerInstance.GetComponent<Rigidbody2D>() != null) Destroy(playerInstance.GetComponent<Rigidbody2D>());
+/*            if (playerInstance.GetComponent<Rigidbody2D>() != null) Destroy(playerInstance.GetComponent<Rigidbody2D>());*/
             Physics2D.autoSyncTransforms = true;
         }
 
@@ -454,9 +454,11 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
 
             Vector2 input = new Vector2(Input.GetAxisRaw(_horizontal), Input.GetAxisRaw(_vertical));
 
+            if (!GameManager.instance.isAlive) input = Vector2.zero;
+
             if ((Input.GetKeyDown(jump) || Input.GetKeyDown(KeyCode.Space)) && _collisions.below)
             {
-                currentVelocity.y = jumpForce;
+                if (GameManager.instance.isAlive) currentVelocity.y = jumpForce;
             }
 
             float targetVeloX = input.x * moveSpeed;

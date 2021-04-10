@@ -12,6 +12,7 @@ public class ProtoPlayer2D : MonoBehaviour
     private Animator animator;
     [HideInInspector] public bool reduceHP = true;
     public SkeletonMecanim spine;
+    public ParticleSystem deathParticles;
 
     // Start is called before the first frame update
     void Start()
@@ -85,8 +86,16 @@ public class ProtoPlayer2D : MonoBehaviour
         }
     }
 
-    public void Hello()
+    public void Die()
     {
-        Debug.Log("No halojaa");
+        animator.SetBool("IsAlive", GameManager.instance.isAlive);
+        deathParticles.Play();
+        Invoke("DeathShakeCam", 1f);
+        CameraController.instance.ZoomTo(2, 4.2f);
+    }
+
+    void DeathShakeCam()
+    {
+        CameraController.instance.ShakeCamera(2, 2f);
     }
 }

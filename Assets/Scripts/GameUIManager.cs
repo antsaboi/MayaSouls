@@ -41,7 +41,7 @@ public class GameUIManager : MonoBehaviour
     private void Update()
     {
         //HP has reduced
-        if (playerStats.HP / 100 < fillAmount)
+        if (fillAmount > playerStats.HP / 100)
         {
             fillAmount = Mathf.MoveTowards(fillAmount, playerStats.HP / 100, fillRate * Time.deltaTime);
             hpFill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, fillStartWidth * fillAmount);
@@ -61,9 +61,9 @@ public class GameUIManager : MonoBehaviour
         }
 
         //HP has been added
-        if (playerStats.HP / 100 > fillAmount)
+        if (fillAmount < playerStats.HP / 100)
         {
-            fillAmount = Mathf.MoveTowards(fillAmount, playerStats.HP / 100, 0.2f * Time.deltaTime);
+            fillAmount = Mathf.MoveTowards(fillAmount, playerStats.HP / 100, Time.deltaTime);
             hpFill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, fillStartWidth * fillAmount);
             hpFill.ForceUpdateRectTransforms();
             float delta = fillStartWidth - (fillStartWidth * fillAmount);
