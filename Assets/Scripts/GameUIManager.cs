@@ -35,7 +35,7 @@ public class GameUIManager : MonoBehaviour
     private void Update()
     {
         if (!GameManager.instance.isAlive) return;
-        else if (playerStats.HP == 0)
+        else if (playerStats.HP < 0)
         {
             GameManager.instance.GameOver();
             return;

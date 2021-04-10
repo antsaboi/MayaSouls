@@ -65,7 +65,6 @@ public class EnemyController : MonoBehaviour
 
             if (Vector2.Distance(transform.position, target.transform.position) < attackDistance)
             {
-                currentDamage = attackDamage;
                 anim.SetBool("Charge", false);
                 charging = false;
                 anim.SetBool("Attacking", true);
@@ -120,6 +119,7 @@ public class EnemyController : MonoBehaviour
     public void HitStart()
     {
         hitBox.enabled = true;
+        currentDamage = attackDamage;
     }
 
     public void HitEnd()

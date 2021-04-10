@@ -314,7 +314,7 @@ MonoBehaviour:
   wallDetection: {fileID: 165801076}
   moveSpeed: 1.5
   touchDamage: 10
-  attackDamage: 20
+  attackDamage: 40
   chargeForce: 4.5
   chargeDistance: 7
   attackDistance: 2
