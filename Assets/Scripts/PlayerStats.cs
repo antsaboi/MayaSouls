@@ -12,23 +12,17 @@ public class PlayerStats : ScriptableObject
     [Range(0, 5)]
     public float PowerUseHPReduceAmount = 0.25f;
     public float hpReduceInterval;
-    public bool isAlive = true;
-    public System.Action OnDeath, OnReset;
-    public delegate void HPReduce(bool usePower);
-    public HPReduce OnHPReduced;
+    public System.Action OnDeath;
 
     public void ResetStats()
     {
         HP = 100;
-        isAlive = true;
-        OnReset?.Invoke();
     }
 
     public float ReduceHP(float amount, bool usePower = false)
     {
         if (!IsAlive()) return 0;
         HP -= amount;
-        OnHPReduced?.Invoke(usePower);
         return HP;
     }
 
@@ -36,7 +30,6 @@ public class PlayerStats : ScriptableObject
     {
         if (!IsAlive()) return 0;
         HP -= HPReduceAmount;
-        OnHPReduced?.Invoke(usePower);
         return HP;
     }
 
@@ -44,7 +37,6 @@ public class PlayerStats : ScriptableObject
     {
         if (!IsAlive()) return 0;
         HP -= PowerUseHPReduceAmount;
-        OnHPReduced?.Invoke(usePower);
         return HP;
     }
 
@@ -52,13 +44,13 @@ public class PlayerStats : ScriptableObject
     {
         if (HP <= 0)
         {
-            isAlive = false;
-            OnDeath?.Invoke();
+            if (!GameManager.instance.isAlive) return false;
+            Debug.Log("DIE");
+            GameManager.instance.GameOver();
+            return false;
         }
         else {
-            isAlive = true;
+            return true;
         }
-
-        return isAlive;
     }
 }

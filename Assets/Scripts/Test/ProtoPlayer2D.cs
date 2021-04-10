@@ -6,13 +6,15 @@ using Spine.Unity;
 public class ProtoPlayer2D : MonoBehaviour
 {
     public PlayerStats stats;
-    public ProtoPlayerBehaviourBase[] behaviours;
+    public PlatformerMovementWASD[] behaviours;
     public Vector2 velocity;
     bool grounded;
     private Animator animator;
     [HideInInspector] public bool reduceHP = true;
     public SkeletonMecanim spine;
     public ParticleSystem deathParticles;
+    public float invulnerabilityTime;
+    private float invulnerabilityTimeStamp;
 
     // Start is called before the first frame update
     void Start()
@@ -48,13 +50,10 @@ public class ProtoPlayer2D : MonoBehaviour
         {
             behaviours[i].FixedUpdateBehaviour();
 
-            if (behaviours[i] is PlatformerMovementWASD p)
-            {
-                velocity = p.currentVelocity;
-                animator.SetBool("Grounded", p.grounded);
-                animator.SetFloat("XSpeed", Mathf.Abs(velocity.x));
-                animator.SetFloat("YSpeed", velocity.y);
-            }
+            velocity = behaviours[i].currentVelocity;
+            animator.SetBool("Grounded", behaviours[i].grounded);
+            animator.SetFloat("XSpeed", Mathf.Abs(velocity.x));
+            animator.SetFloat("YSpeed", velocity.y);
         }
     }
 
@@ -65,7 +64,7 @@ public class ProtoPlayer2D : MonoBehaviour
 
     IEnumerator HPReduce()
     {
-        while (stats.HP >= 0)
+        while (stats.HP > -1)
         {
             if (!reduceHP)
             {
@@ -86,16 +85,45 @@ public class ProtoPlayer2D : MonoBehaviour
         }
     }
 
+    //damage
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!GameManager.instance.isAlive) return;
+
+        if (invulnerabilityTimeStamp > Time.time)
+        {
+            return;
+        }
+
+        if (collision.CompareTag("Enemy"))
+        {
+            var script = collision.GetComponent<EnemyController>();
+            stats.ReduceHP(script.currentDamage);
+            behaviours[0].TakeDamage(new Vector2(7, 5));
+            CameraController.instance.ShakeCamera(2f, 0.5f);
+            animator.SetTrigger("Damage");
+            invulnerabilityTimeStamp = Time.time + invulnerabilityTime;
+        }
+
+        if (collision.GetComponent<DamageDealer>() is DamageDealer d)
+        {
+            stats.ReduceHP(d.damage);
+            behaviours[0].TakeDamage(d.knockBack);
+            CameraController.instance.ShakeCamera(3, 0.2f);
+            animator.SetTrigger("Damage");
+            invulnerabilityTimeStamp = Time.time + invulnerabilityTime;
+        }
+    }
+
     public void Die()
     {
         animator.SetBool("IsAlive", GameManager.instance.isAlive);
-        deathParticles.Play();
-        Invoke("DeathShakeCam", 1f);
-        CameraController.instance.ZoomTo(2, 4.2f);
+        CameraController.instance.ZoomTo(2, 6f);
     }
 
-    void DeathShakeCam()
+    public void DeathShakeCam()
     {
+        deathParticles.Play();
         CameraController.instance.ShakeCamera(2, 2f);
     }
 }

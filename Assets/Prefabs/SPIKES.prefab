@@ -281,8 +281,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3531298530632083671}
   - component: {fileID: 3531298530632083668}
-  - component: {fileID: 1546234592}
   - component: {fileID: 1546234591}
+  - component: {fileID: 4250912298446609743}
   m_Layer: 0
   m_Name: TRAPS_7
   m_TagString: Untagged
@@ -356,18 +356,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
---- !u!114 &1546234592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3531298530632083670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba9c67ad926e57e4ba80878dbc3313e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1546234591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -394,6 +382,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.06, y: 0.56}
   m_EdgeRadius: 0
+--- !u!114 &4250912298446609743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531298530632083670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6388a9148b2c00f4d87258289b11bc65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  knockBack: {x: 3, y: 3}
 --- !u!1 &3531298530732017604
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,8 +487,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3531298531332289455}
   - component: {fileID: 3531298531332289452}
-  - component: {fileID: 1427615397}
   - component: {fileID: 1427615396}
+  - component: {fileID: 3972444460007716415}
   m_Layer: 0
   m_Name: TRAPS_6
   m_TagString: Untagged
@@ -559,18 +561,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
---- !u!114 &1427615397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3531298531332289454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba9c67ad926e57e4ba80878dbc3313e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1427615396
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -597,6 +587,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.06, y: 0.56}
   m_EdgeRadius: 0
+--- !u!114 &3972444460007716415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531298531332289454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6388a9148b2c00f4d87258289b11bc65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  knockBack: {x: 3, y: 3}
 --- !u!1 &3531298531376514997
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,8 +611,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3531298531376514994}
   - component: {fileID: 3531298531376514995}
-  - component: {fileID: 1781213672}
   - component: {fileID: 1781213671}
+  - component: {fileID: 2307587991937135292}
   m_Layer: 0
   m_Name: TRAPS_8
   m_TagString: Untagged
@@ -682,18 +686,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
---- !u!114 &1781213672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3531298531376514997}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba9c67ad926e57e4ba80878dbc3313e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1781213671
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -720,3 +712,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.06, y: 0.56}
   m_EdgeRadius: 0
+--- !u!114 &2307587991937135292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3531298531376514997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6388a9148b2c00f4d87258289b11bc65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  knockBack: {x: 3, y: 3}

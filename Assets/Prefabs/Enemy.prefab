@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 5148872519165486563}
   - component: {fileID: 4617352500127202344}
   - component: {fileID: 8071876307899170146}
+  - component: {fileID: 719692205}
   m_Layer: 0
   m_Name: Spine Mecanim GameObject (maya_enemy)
   m_TagString: Untagged
@@ -88,7 +89,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3339808410004936264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.051, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2030625806809913509}
@@ -201,6 +202,18 @@ MonoBehaviour:
     useCustomMixMode: 1
     layerMixModes: 01000000
     layerBlendModes: 01000000
+--- !u!114 &719692205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3339808410004936264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22be29c6db68b514c811244975a0f113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3362700283225063415
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,9 +226,10 @@ GameObject:
   - component: {fileID: 1348047287}
   - component: {fileID: 1348047286}
   - component: {fileID: 1348047288}
+  - component: {fileID: 5744418904289057253}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -257,7 +271,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!61 &1348047286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -268,7 +282,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: c3425f81fa28c35448e709334a5f0e34, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.03, y: 0.88}
@@ -299,6 +313,36 @@ MonoBehaviour:
   groundDetection: {fileID: 1610681943}
   wallDetection: {fileID: 165801076}
   moveSpeed: 1.5
-  chargeForce: 5
-  chargeDistance: 5
+  touchDamage: 10
+  attackDamage: 20
+  chargeForce: 4.5
+  chargeDistance: 7
   attackDistance: 2
+  hitBox: {fileID: 5744418904289057253}
+  currentDamage: 0
+--- !u!61 &5744418904289057253
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3362700283225063415}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1, y: 0.92}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.34, y: 1.82}
+  m_EdgeRadius: 0

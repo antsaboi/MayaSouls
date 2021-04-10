@@ -245,6 +245,7 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
     //Mess with these to handle acceleration
     public float accelerationTimeAirborne = .2f, accelerationTimeGrounded = .1f, decelerationTimeGrounded = 0;
     public bool hanging = false;
+    private Vector2 knockBack;
 
     #region raycast controller things
     //Raycast controller
@@ -433,6 +434,11 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
 
     #region Raycast Moving Method
 
+    public void TakeDamage(Vector2 knockBack)
+    {
+        this.knockBack = knockBack;
+    }
+
     private void MoveWithRaycast()
     {
         if (UseAxis)
@@ -463,7 +469,13 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
 
             float currentDir = Mathf.Sign(currentVelocity.x);
             float targetDir = Mathf.Sign(targetVeloX);
-            
+
+            if (knockBack != Vector2.zero)
+            {
+                currentVelocity = new Vector2(-knockBack.x * currentDir, knockBack.y);
+                knockBack = Vector2.zero;
+            }
+
             if (Mathf.Abs(targetVeloX) > 0 && playerInstance.transform.localScale.x != targetDir)
             {
                 FlipRaycastOrigins();

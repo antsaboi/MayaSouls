@@ -6,14 +6,12 @@ using UnityEngine.UI;
 public class GameUIManager : MonoBehaviour
 {
     [SerializeField] PlayerStats playerStats;
-    [SerializeField] RectTransform hpFill;
+    [SerializeField] Image hpFill;
     [SerializeField] ParticleSystem fillParticles;
     [SerializeField] GameObject CheckPointText;
     [SerializeField] float fillRate;
     float fillAmount = 1;
-    float fillStartWidth;
-    Coroutine fillRoutine, reduceRoutine;
-    Vector2 hpFillStartPos;
+    [SerializeField]float hpParticlesMinPosX, hpParticlesMaxPosX;
 
     [System.Serializable]
     public struct AnimParameters
@@ -28,63 +26,46 @@ public class GameUIManager : MonoBehaviour
     private void Start()
     {
         anim = GetComponentInChildren<Animator>();
-        fillStartWidth = hpFill.rect.width;
-        hpFillStartPos = hpFill.anchoredPosition;
 
-        playerStats.OnHPReduced += SetHPReduceSmooth;
         playerStats.OnDeath += Death;
-        playerStats.OnReset += SetHPFillSmooth;
 
         fillParticles.Simulate(0.01f);
     }
 
     private void Update()
     {
+        if (!GameManager.instance.isAlive) return;
+        else if (playerStats.HP == 0)
+        {
+            GameManager.instance.GameOver();
+            return;
+        }
+
         //HP has reduced
         if (fillAmount > playerStats.HP / 100)
         {
             fillAmount = Mathf.MoveTowards(fillAmount, playerStats.HP / 100, fillRate * Time.deltaTime);
-            hpFill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, fillStartWidth * fillAmount);
-            hpFill.ForceUpdateRectTransforms();
-            float delta = fillStartWidth - (fillStartWidth * fillAmount);
-            hpFill.anchoredPosition = new Vector2(hpFillStartPos.x - delta / 2, hpFillStartPos.y);
+            hpFill.fillAmount = fillAmount;
 
-            fillParticles.transform.position = new Vector2(hpFill.transform.position.x + (3.4f * fillAmount), hpFill.transform.position.y);
+            fillParticles.transform.localPosition = new Vector2(Mathf.Lerp(hpParticlesMinPosX, hpParticlesMaxPosX, fillAmount), fillParticles.transform.localPosition.y);
             fillParticles.Play(true);
-
-            if (playerStats.HP <= 0)
-            {
-                hpFill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
-                hpFill.ForceUpdateRectTransforms();
-                fillParticles.transform.position = new Vector2(hpFill.transform.position.x, hpFill.transform.position.y);
-            }
         }
 
         //HP has been added
         if (fillAmount < playerStats.HP / 100)
         {
             fillAmount = Mathf.MoveTowards(fillAmount, playerStats.HP / 100, Time.deltaTime);
-            hpFill.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, fillStartWidth * fillAmount);
-            hpFill.ForceUpdateRectTransforms();
-            float delta = fillStartWidth - (fillStartWidth * fillAmount);
-            hpFill.anchoredPosition = new Vector2(hpFillStartPos.x - delta / 2, hpFillStartPos.y);
-            fillParticles.transform.position = new Vector2(hpFill.transform.position.x + (3.4f * fillAmount), hpFill.transform.position.y);
+            hpFill.fillAmount = fillAmount;
+            fillParticles.transform.localPosition = new Vector2(Mathf.Lerp(hpParticlesMinPosX, hpParticlesMaxPosX, fillAmount), fillParticles.transform.localPosition.y);
         }
     }
 
-    void SetHPReduceSmooth(bool usePower)
-    {
-
-    }
-
-    void SetHPFillSmooth()
-    {
-
-    }
-
-    void Death()
+    public void Death()
     {
         CallAnimation(animationParameters.DeathTriggerName);
+        fillAmount = 0;
+        hpFill.fillAmount = 0;
+        fillParticles.transform.localPosition = new Vector2(Mathf.Lerp(hpParticlesMinPosX, hpParticlesMaxPosX, fillAmount), fillParticles.transform.localPosition.y);
     }
 
     public void OnCheckPoint()
@@ -109,8 +90,6 @@ public class GameUIManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        playerStats.OnHPReduced -= SetHPReduceSmooth;
         playerStats.OnDeath -= Death;
-        playerStats.OnReset -= SetHPFillSmooth;
     }
 }

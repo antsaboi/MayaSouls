@@ -12,10 +12,14 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed;
 
     [Header("Attacks")]
+    [Range(0, 100)]
+    public float touchDamage, attackDamage;
     public float chargeForce;
     public float chargeDistance;
     public float attackDistance;
+    public BoxCollider2D hitBox;
 
+    [HideInInspector] public float currentDamage;
     bool movingRight = true;
     int hDirection = 1;
     Rigidbody2D rb;
@@ -33,6 +37,9 @@ public class EnemyController : MonoBehaviour
         lastCharge = Time.time;
         anim = GetComponentInChildren<Animator>();
         anim.SetBool("Walking", true);
+        var hit = Physics2D.Raycast(groundDetection.position, Vector2.down, 100f, LayerMask.GetMask("Ground"));
+        if (hit.collider != null) transform.position = hit.point;
+        currentDamage = touchDamage;
     }
 
     // Update is called once per frame
@@ -45,16 +52,27 @@ public class EnemyController : MonoBehaviour
 
         if (!target) target = GameObject.FindGameObjectWithTag("Player");
 
-        if (Vector2.Distance(transform.position, target.transform.position) < chargeDistance)
+        if (Vector2.Distance(transform.position, target.transform.position) < chargeDistance && target.transform.position.y - transform.position.y < 1f)
         {
+            if (target.transform.position.x < transform.position.x)
+            {
+                if (movingRight) Turn();
+            }
+            else
+            {
+                if (!movingRight) Turn();
+            }
+
             if (Vector2.Distance(transform.position, target.transform.position) < attackDistance)
             {
+                currentDamage = attackDamage;
                 anim.SetBool("Charge", false);
                 charging = false;
                 anim.SetBool("Attacking", true);
                 attacking = true;
             }
             else {
+                currentDamage = touchDamage;
                 anim.SetBool("Charge", true);
                 charging = true;
                 anim.SetBool("Attacking", false);
@@ -63,6 +81,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            currentDamage = touchDamage;
             anim.SetBool("Attacking", false);
             anim.SetBool("Charge", false);
             charging = false;
@@ -98,12 +117,21 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    public void HitStart()
+    {
+        hitBox.enabled = true;
+    }
+
+    public void HitEnd()
+    {
+        hitBox.enabled =false;
+    }
+
     void CheckForGround()
     {
         int layerMask = LayerMask.GetMask("Ground");
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 0.3f, layerMask);
         if (groundInfo.collider == false) Turn();
-
     }
 
     void CheckForWall()
