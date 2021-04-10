@@ -216,8 +216,6 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
     }
 
     public LockAxis movementLockAxis;
-
-    //For raycast continue here https://www.youtube.com/watch?v=46WNb1Aucyg&list=PLFt_AvWsXl0f0hqURlhyIoAabKPgRsqjz&index=9
     public enum MoveMethod {
         RigidbodyAddForce,
         RigidbodyVelocity,

@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         cam = GetComponent<CinemachineVirtualCamera>();
-        ZoomTo(8, 0.5f);
+        //ZoomTo(8, 0.5f);
 
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<ProtoPlayer2D>();
     }
