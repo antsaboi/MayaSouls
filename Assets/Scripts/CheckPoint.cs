@@ -8,7 +8,7 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] ParticleSystem EnterParticles;
     [SerializeField] GameEvent CheckPointReached;
 
-    Rigidbody2D playerBody;
+    ProtoPlayer2D playerBody;
     bool isEntered;
 
     Material distortionMat;
@@ -73,8 +73,8 @@ public class CheckPoint : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //Save game
-            var player = collision.transform.GetComponentInChildren<Character_controller>();
-            if (playerBody is null) playerBody = player.body;
+            var player = collision.transform.GetComponentInChildren<ProtoPlayer2D>();
+            if (playerBody is null) playerBody = player;
             player.stats.ResetStats();
             player.reduceHP = false;
 
@@ -92,8 +92,8 @@ public class CheckPoint : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            var player = collision.transform.GetComponentInChildren<Character_controller>();
-            if (playerBody is null) playerBody = player.body;
+            var player = collision.transform.GetComponentInChildren<ProtoPlayer2D>();
+            if (playerBody is null) playerBody = player;
             player.reduceHP = true;
 
             EnterParticles.transform.position = collision.transform.position;

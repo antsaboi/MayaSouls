@@ -3652,14 +3652,14 @@ AnimatorStateMachine:
     second:
     - {fileID: -3018335079970532296}
     - {fileID: 595222551383218024}
-  - first: {fileID: -2527527345687299444}
-    second:
-    - {fileID: -2309353505646568318}
-    - {fileID: 782323344646576270}
   - first: {fileID: -4796640313901286876}
     second:
     - {fileID: -5936056699277362857}
     - {fileID: 5517928689954892902}
+  - first: {fileID: -2527527345687299444}
+    second:
+    - {fileID: -2309353505646568318}
+    - {fileID: 782323344646576270}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -220, y: -60, z: 0}
   m_EntryPosition: {x: -220, y: -120, z: 0}

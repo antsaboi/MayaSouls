@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74c414384708ff4388dac5ebd67f9cd, type: 3}
+  m_Name: MovementBehaviour2D
+  m_EditorClassIdentifier: 
+  UseAxis: 1
+  up: 119
+  down: 115
+  left: 97
+  right: 100
+  jump: 32
+  alignToSurface: 0
+  moveSpeed: 10
+  minMoveSpeed: 0.1
+  airMoveSpeed: 10
+  maxSpeed: {x: 20, y: 25}
+  jumpHeight: 5
+  timeToJumpApex: 0.5
+  wallSlideSpeedMax: 3
+  jumpForce: 20
+  gravityScale: -40
+  grounded: 1
+  constraints: 0
+  speedLimitMode: 0
+  movementLockAxis: 0
+  moveMethod: 2
+  OnMoveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartMovingEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStopEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  currentVelocity: {x: -2.8409474, y: -0.653904}
+  alignToSurfaceSmoothing: 1
+  accelerationTimeAirborne: 0.35
+  accelerationTimeGrounded: 0.2
+  decelerationTimeGrounded: 0.2
+  hanging: 0
+  horizontalRayCount: 4
+  verticalRayCount: 4
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 256
