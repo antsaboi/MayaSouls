@@ -52,7 +52,8 @@ public class EnemyController : MonoBehaviour
 
         if (!target) target = GameObject.FindGameObjectWithTag("Player");
 
-        if (Vector2.Distance(transform.position, target.transform.position) < chargeDistance && target.transform.position.y - transform.position.y < 1f)
+        if (Vector2.Distance(transform.position, target.transform.position) < chargeDistance && 
+            (target.transform.position.y - transform.position.y < 0.5f && target.transform.position.y - transform.position.y > -0.5f))
         {
             if (target.transform.position.x < transform.position.x)
             {
