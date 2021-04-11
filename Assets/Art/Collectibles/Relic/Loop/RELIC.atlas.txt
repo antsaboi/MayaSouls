@@ -1,0 +1,41 @@
+
+RELIC.png
+size: 821,286
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Folder 2 Copy 7
+  rotate: true
+  xy: 599, 145
+  size: 139, 220
+  orig: 139, 220
+  offset: 0, 0
+  index: -1
+Layer 1
+  rotate: false
+  xy: 2, 6
+  size: 200, 278
+  orig: 200, 278
+  offset: 0, 0
+  index: -1
+Layer 29 Copy 2
+  rotate: true
+  xy: 599, 2
+  size: 141, 175
+  orig: 141, 175
+  offset: 0, 0
+  index: -1
+Layer 29 Copy 3
+  rotate: false
+  xy: 400, 50
+  size: 197, 234
+  orig: 197, 234
+  offset: 0, 0
+  index: -1
+Layer 39
+  rotate: false
+  xy: 204, 8
+  size: 194, 276
+  orig: 194, 276
+  offset: 0, 0
+  index: -1

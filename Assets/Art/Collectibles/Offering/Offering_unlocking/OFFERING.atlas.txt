@@ -1,0 +1,41 @@
+
+OFFERING.png
+size: 477,1011
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BOW GLOW
+  rotate: true
+  xy: 2, 539
+  size: 470, 198
+  orig: 470, 198
+  offset: 0, 0
+  index: -1
+BOWL BACK
+  rotate: true
+  xy: 2, 122
+  size: 415, 139
+  orig: 415, 139
+  offset: 0, 0
+  index: -1
+BOWL FRONT
+  rotate: false
+  xy: 2, 2
+  size: 408, 118
+  orig: 408, 118
+  offset: 0, 0
+  index: -1
+HEART
+  rotate: true
+  xy: 202, 671
+  size: 338, 273
+  orig: 338, 273
+  offset: 0, 0
+  index: -1
+HEART GLOW Copy
+  rotate: true
+  xy: 143, 144
+  size: 393, 330
+  orig: 393, 330
+  offset: 0, 0
+  index: -1

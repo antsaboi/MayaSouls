@@ -1,0 +1,104 @@
+{
+"skeleton": {
+	"hash": "DrLZ1erECeiWf6l5ITBmBsZ/nsA",
+	"spine": "3.8.99",
+	"x": -453.19,
+	"y": -331.93,
+	"width": 1005.27,
+	"height": 965.02,
+	"images": "C:/Users/anton/Desktop/stuff/mayapeli/PSD/images/",
+	"audio": "C:\\Users\\anton\\Desktop\\stuff\\mayapeli\\PSD"
+},
+"bones": [
+	{ "name": "root", "x": 29.38, "y": -23.25 }
+],
+"slots": [
+	{ "name": "BOW GLOW", "bone": "root", "attachment": "BOW GLOW" },
+	{ "name": "BOWL BACK", "bone": "root", "attachment": "BOWL BACK" },
+	{ "name": "HEART GLOW Copy", "bone": "root", "attachment": "HEART GLOW Copy" },
+	{ "name": "HEART", "bone": "root", "attachment": "HEART" },
+	{ "name": "BOWL FRONT", "bone": "root", "attachment": "BOWL FRONT" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"BOW GLOW": {
+				"BOW GLOW": { "x": 27.46, "y": -39.62, "rotation": -9.06, "width": 940, "height": 395 }
+			},
+			"BOWL BACK": {
+				"BOWL BACK": { "x": 27.46, "y": -40.12, "rotation": -9.06, "width": 830, "height": 278 }
+			},
+			"BOWL FRONT": {
+				"BOWL FRONT": { "x": 27.46, "y": -52.62, "rotation": -9.06, "width": 816, "height": 235 }
+			},
+			"HEART": {
+				"HEART": { "x": -28.69, "y": 251.05, "rotation": -12.23, "width": 676, "height": 545 }
+			},
+			"HEART GLOW Copy": {
+				"HEART GLOW Copy": { "x": -28.69, "y": 251.05, "rotation": -12.23, "width": 786, "height": 659 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {
+		"slots": {
+			"BOW GLOW": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.5333, "color": "ffffffff" },
+					{ "time": 0.6667, "color": "ffffff00" }
+				]
+			},
+			"BOWL BACK": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.5333, "color": "ffffffff" },
+					{ "time": 0.6667, "color": "ffffff00" }
+				]
+			},
+			"BOWL FRONT": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.5333, "color": "ffffffff" },
+					{ "time": 0.6667, "color": "ffffff00" }
+				]
+			},
+			"HEART": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.5333, "color": "ffffffff" },
+					{ "time": 0.6667, "color": "ffffff00" }
+				]
+			},
+			"HEART GLOW Copy": {
+				"color": [
+					{ "color": "ffffff00" },
+					{ "time": 0.3333, "color": "ffffffff", "curve": "stepped" },
+					{ "time": 0.5333, "color": "ffffffff" },
+					{ "time": 0.6667, "color": "ffffff00" }
+				]
+			}
+		},
+		"bones": {
+			"root": {
+				"translate": [
+					{},
+					{ "time": 0.3333, "y": 531.88 },
+					{ "time": 0.6667, "y": 644.81 }
+				],
+				"scale": [
+					{ "x": 0.917, "y": 0.917 },
+					{ "time": 0.3333, "x": 1.247, "y": 1.247 },
+					{ "time": 0.6667, "x": 1.338, "y": 1.338 }
+				]
+			}
+		}
+	}
+}
+}

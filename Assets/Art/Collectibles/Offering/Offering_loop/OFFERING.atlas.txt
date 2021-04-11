@@ -1,0 +1,90 @@
+
+OFFERING.png
+size: 1048,1063
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BOW GLOW
+  rotate: false
+  xy: 397, 549
+  size: 470, 198
+  orig: 470, 198
+  offset: 0, 0
+  index: -1
+BOWL BACK
+  rotate: false
+  xy: 2, 2
+  size: 415, 139
+  orig: 415, 139
+  offset: 0, 0
+  index: -1
+BOWL FRONT
+  rotate: false
+  xy: 373, 429
+  size: 408, 118
+  orig: 408, 118
+  offset: 0, 0
+  index: -1
+HEART
+  rotate: false
+  xy: 2, 143
+  size: 338, 273
+  orig: 338, 273
+  offset: 0, 0
+  index: -1
+HEART GLOW Copy
+  rotate: false
+  xy: 2, 731
+  size: 393, 330
+  orig: 393, 330
+  offset: 0, 0
+  index: -1
+LIGHT
+  rotate: true
+  xy: 373, 169
+  size: 258, 352
+  orig: 258, 352
+  offset: 0, 0
+  index: -1
+ray1
+  rotate: true
+  xy: 739, 133
+  size: 294, 278
+  orig: 294, 278
+  offset: 0, 0
+  index: -1
+ray2
+  rotate: true
+  xy: 869, 440
+  size: 322, 153
+  orig: 322, 153
+  offset: 0, 0
+  index: -1
+ray3
+  rotate: false
+  xy: 2, 418
+  size: 369, 311
+  orig: 369, 311
+  offset: 0, 0
+  index: -1
+ray4
+  rotate: false
+  xy: 767, 764
+  size: 279, 297
+  orig: 279, 297
+  offset: 0, 0
+  index: -1
+ray5
+  rotate: false
+  xy: 419, 13
+  size: 318, 154
+  orig: 318, 154
+  offset: 0, 0
+  index: -1
+ray6
+  rotate: false
+  xy: 397, 749
+  size: 368, 312
+  orig: 368, 312
+  offset: 0, 0
+  index: -1
