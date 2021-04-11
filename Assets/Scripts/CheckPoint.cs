@@ -7,6 +7,7 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] SpriteRenderer distortion;
     [SerializeField] ParticleSystem EnterParticles;
     [SerializeField] GameEvent CheckPointReached;
+    [SerializeField] Transform checkPointSpawnPos;
 
     ProtoPlayer2D playerBody;
     bool isEntered;
@@ -55,6 +56,7 @@ public class CheckPoint : MonoBehaviour
         {
             anim.SetTrigger("Enter");
             activated = true;
+            GameManager.lastCheckPoint = checkPointSpawnPos.position;
             CheckPointReached.Raise();
         }
         distortion.material.SetVector("Tiling", new Vector4(-direction.x, -direction.y, 0, 0));

@@ -8,13 +8,14 @@ public class ProtoPlayer2D : MonoBehaviour
     public PlayerStats stats;
     public PlatformerMovementWASD[] behaviours;
     public Vector2 velocity;
-    bool grounded;
+    public bool grounded;
     private Animator animator;
     [HideInInspector] public bool reduceHP = true;
     public SkeletonMecanim spine;
     public ParticleSystem deathParticles;
     public float invulnerabilityTime;
     private float invulnerabilityTimeStamp;
+    bool powerUse;
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +33,14 @@ public class ProtoPlayer2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (powerUse) return;
+
         for (int i = 0; i < behaviours.Length; i++)
         {
             behaviours[i].UpdateBehaviour();
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (grounded && Input.GetKeyDown(KeyCode.F))
         {
             animator.SetTrigger("Attack");
             //body.velocity = Vector2.zero;
@@ -46,15 +49,32 @@ public class ProtoPlayer2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (powerUse) return;
+
         for (int i = 0; i < behaviours.Length; i++)
         {
             behaviours[i].FixedUpdateBehaviour();
 
             velocity = behaviours[i].currentVelocity;
-            animator.SetBool("Grounded", behaviours[i].grounded);
+            animator.SetBool("Grounded", grounded = behaviours[i].grounded);
             animator.SetFloat("XSpeed", Mathf.Abs(velocity.x));
             animator.SetFloat("YSpeed", velocity.y);
         }
+    }
+
+    public void StartGame()
+    {
+        if(GameManager.lastCheckPoint != Vector3.zero) transform.position = GameManager.lastCheckPoint;
+    }
+
+    public void StartPowerUse()
+    {
+        animator.SetBool("Power", powerUse = true);
+    }
+
+    public void EndPowerUse()
+    {
+        animator.SetBool("Power", powerUse = false);
     }
 
     void StartHPReduce()

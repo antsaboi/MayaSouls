@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameUIManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] ParticleSystem fillParticles;
     [SerializeField] GameObject CheckPointText;
     [SerializeField] float fillRate;
+    [SerializeField] Image fadeImage;
     float fillAmount = 1;
     [SerializeField]float hpParticlesMinPosX, hpParticlesMaxPosX;
 
@@ -29,6 +31,8 @@ public class GameUIManager : MonoBehaviour
 
         playerStats.OnDeath += Death;
 
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.DOFade(0, 2f);
         fillParticles.Simulate(0.01f);
     }
 
@@ -66,6 +70,9 @@ public class GameUIManager : MonoBehaviour
         fillAmount = 0;
         hpFill.fillAmount = 0;
         fillParticles.transform.localPosition = new Vector2(Mathf.Lerp(hpParticlesMinPosX, hpParticlesMaxPosX, fillAmount), fillParticles.transform.localPosition.y);
+        fadeImage.DOFade(1, 2).SetDelay(3).OnComplete(() => {
+            GameManager.instance.ReloadGame();
+        });
     }
 
     public void OnCheckPoint()

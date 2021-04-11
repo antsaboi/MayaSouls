@@ -24,11 +24,13 @@ public class MouseDragUser : MonoBehaviour
     private Dictionary<GameObject, MouseDragTarget> cachedTargets = new Dictionary<GameObject, MouseDragTarget>();
     bool dragging = false;
     float reduceHPTimer;
+    ProtoPlayer2D player;
 
     // Start is called before the first frame update
     void Start()
     {
         dragTarget = new GameObject("DragTarget").transform;
+        player = GetComponent<ProtoPlayer2D>();
     }
 
     // Update is called once per frame
@@ -40,6 +42,8 @@ public class MouseDragUser : MonoBehaviour
 
     void HandleInput()
     {
+        if (!player.grounded) return;
+
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         if (Input.GetMouseButtonDown(0))
@@ -50,8 +54,6 @@ public class MouseDragUser : MonoBehaviour
             {
                 if (cachedTargets.ContainsKey(hit.collider.gameObject))
                 {
-                    //Use the cached one or do nothing if is already the selected
-
                     if (!ReferenceEquals(currentDragTarget, null))
                         if (cachedTargets[hit.transform.gameObject] == currentDragTarget) return;
 
@@ -59,12 +61,10 @@ public class MouseDragUser : MonoBehaviour
                 }
                 else
                 {
-                    //Perform an optimizen null ref check for mousedrag
                     if (ReferenceEquals(hit.transform.GetComponent<MouseDragTarget>(), null))
                         return;
                     else
                     {
-                        //Add to dict and set as used
                         cachedTargets.Add(hit.transform.gameObject, hit.transform.GetComponent<MouseDragTarget>());
                         currentDragTarget = cachedTargets[hit.collider.gameObject];
                     }
@@ -95,6 +95,7 @@ public class MouseDragUser : MonoBehaviour
     void AttachToMouse(Vector2 position)
     {
         dragging = true;
+        player.StartPowerUse();
 
         switch (attachType)
         {
@@ -112,6 +113,7 @@ public class MouseDragUser : MonoBehaviour
     void DetachTarget()
     {
         if (ReferenceEquals(currentDragTarget, null)) return;
+        player.EndPowerUse();
 
         dragging = false;
         currentDragTarget.Detach();
