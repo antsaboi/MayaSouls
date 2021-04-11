@@ -20,4 +20,14 @@ public class AnimationEventsEnemy : MonoBehaviour
     {
         controller.HitEnd();
     }
+
+    public void DamageStart()
+    {
+        controller.DamageStart();
+    }
+
+    public void DamageEnd()
+    {
+        controller.DamageEnd();
+    }
 }

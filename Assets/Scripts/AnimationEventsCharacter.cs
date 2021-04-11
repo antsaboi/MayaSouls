@@ -15,4 +15,14 @@ public class AnimationEventsCharacter : MonoBehaviour
     {
         controller.DeathShakeCam();
     }
+
+    public void HitStart()
+    {
+        controller.AttackStart();
+    }
+
+    public void HitEnd()
+    {
+        controller.AttackEnd();
+    }
 }

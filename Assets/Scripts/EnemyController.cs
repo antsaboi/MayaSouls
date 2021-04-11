@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("General")]
     public float moveSpeed;
+    public int HP = 2;
 
     [Header("Attacks")]
     [Range(0, 100)]
@@ -28,7 +29,8 @@ public class EnemyController : MonoBehaviour
     Animator anim;
     bool charging = false;
     bool attacking;
-
+    bool isAlive = true;
+    bool damaged = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,12 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isAlive) return;
+        if (damaged)
+        {
+            return;
+        }
+
         CheckForGround();
         CheckForWall();
 
@@ -114,7 +122,6 @@ public class EnemyController : MonoBehaviour
 
         rb.velocity = Vector3.zero;
         rb.angularVelocity = 0;
-
     }
 
     public void HitStart()
@@ -126,6 +133,16 @@ public class EnemyController : MonoBehaviour
     public void HitEnd()
     {
         hitBox.enabled =false;
+    }
+
+    public void DamageStart()
+    {
+        damaged = true;
+    }
+
+    public void DamageEnd()
+    {
+        damaged = false;
     }
 
     void CheckForGround()
@@ -141,6 +158,39 @@ public class EnemyController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(wallDetection.position, Vector2.right * hDirection, 0.01f, layerMask);
 
         if (hit.collider) Turn();
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (damaged) return;
+
+            var player = collision.GetComponent<ProtoPlayer2D>();
+            if (player.isAttacking)
+            {
+                HP--;
+                HitEnd();
+                anim.SetTrigger("Damage");
+
+                if (HP <= 0)
+                {
+                    Die();
+                }
+            }
+        }
+    }
+
+    void Die()
+    {
+        rb.velocity = Vector2.zero;
+        isAlive = false;
+        anim.SetTrigger("Death");
+        var cols = GetComponentsInChildren<Collider2D>();
+
+        foreach (var col in cols)
+        {
+            col.enabled = false;
+        }
     }
 }

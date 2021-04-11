@@ -8,14 +8,18 @@ public class ProtoPlayer2D : MonoBehaviour
     public PlayerStats stats;
     public PlatformerMovementWASD[] behaviours;
     public Vector2 velocity;
-    public bool grounded;
-    private Animator animator;
-    [HideInInspector] public bool reduceHP = true;
     public SkeletonMecanim spine;
     public ParticleSystem deathParticles;
     public float invulnerabilityTime;
-    private float invulnerabilityTimeStamp;
+    public int attackDamage;
+    public BoxCollider2D hitBox;
+
+    [HideInInspector] public bool grounded;
+    [HideInInspector] public bool reduceHP = true;
+    [HideInInspector] public bool isAttacking;
+    Animator animator;
     bool powerUse;
+    private float invulnerabilityTimeStamp;
 
     // Start is called before the first frame update
     void Start()
@@ -33,23 +37,26 @@ public class ProtoPlayer2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (powerUse) return;
+        if (powerUse || isAttacking) return;
 
         for (int i = 0; i < behaviours.Length; i++)
         {
             behaviours[i].UpdateBehaviour();
         }
 
-        if (grounded && Input.GetKeyDown(KeyCode.F))
+        if (grounded && !isAttacking && Input.GetMouseButtonDown(0))
         {
-            animator.SetTrigger("Attack");
-            //body.velocity = Vector2.zero;
+            animator.SetInteger("Attack", Random.Range(1, 4));
         }
     }
 
     private void FixedUpdate()
     {
-        if (powerUse) return;
+        if (powerUse || isAttacking)
+        {
+            if (!grounded) AttackEnd();
+            return;
+        }
 
         for (int i = 0; i < behaviours.Length; i++)
         {
@@ -115,7 +122,7 @@ public class ProtoPlayer2D : MonoBehaviour
             return;
         }
 
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") && !isAttacking)
         {
             var script = collision.GetComponent<EnemyController>();
             stats.ReduceHP(script.currentDamage);
@@ -145,5 +152,19 @@ public class ProtoPlayer2D : MonoBehaviour
     {
         deathParticles.Play();
         CameraController.instance.ShakeCamera(2, 2f);
+    }
+
+    public void AttackStart()
+    {
+        hitBox.enabled = true;
+        isAttacking = true;
+        behaviours[0].currentVelocity = Vector2.zero;
+    }
+
+    public void AttackEnd()
+    {
+        isAttacking = false;
+        hitBox.enabled = false;
+        animator.SetInteger("Attack", 0);
     }
 }
