@@ -74473,6 +74473,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 959223280}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &759359273 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 759359273, guid: 676a75d93bc045d44812e17fa4979a32,
+    type: 3}
+  m_PrefabInstance: {fileID: 2059618845}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &830186417
 GameObject:
   m_ObjectHideFlags: 0
@@ -80241,6 +80253,18 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 1919612650}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1553171524 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1553171524, guid: 676a75d93bc045d44812e17fa4979a32,
+    type: 3}
+  m_PrefabInstance: {fileID: 2059618845}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1570732295
 GameObject:
   m_ObjectHideFlags: 0
@@ -81457,6 +81481,14 @@ PrefabInstance:
       propertyPath: fadeImage
       value: 
       objectReference: {fileID: 1096792910}
+    - target: {fileID: 195638430, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
+      propertyPath: relicText
+      value: 
+      objectReference: {fileID: 1553171524}
+    - target: {fileID: 195638430, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
+      propertyPath: offeringText
+      value: 
+      objectReference: {fileID: 759359273}
     - target: {fileID: 1091891793, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
       propertyPath: m_text
       value: CHECKPOINT
@@ -81998,6 +82030,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 850499378}
     m_Modifications:
+    - target: {fileID: 33540299, guid: e1649355dd64ae24aa3ec91f5ef26ae2, type: 3}
+      propertyPath: blendDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2523808670216979882, guid: e1649355dd64ae24aa3ec91f5ef26ae2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
