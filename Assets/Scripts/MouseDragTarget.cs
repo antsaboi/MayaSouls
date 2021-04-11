@@ -8,15 +8,13 @@ using UnityEngine;
 public class MouseDragTarget : MonoBehaviour
 {
     private Rigidbody2D body;
-    private SpriteRenderer spriteRenderer;
     private TargetJoint2D joint;
     Animator anim;
-
+    public bool isActive = true;
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
         joint = GetComponent<TargetJoint2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         joint.enabled = false;
 
         //This is a test area
@@ -25,6 +23,12 @@ public class MouseDragTarget : MonoBehaviour
 
     public void Attach(Color color, Vector2 pos, float damping, float frequency)
     {
+        if (!isActive)
+        {
+            Detach();
+            return;
+        }
+
         if (pos != Vector2.zero) joint.anchor = transform.InverseTransformPoint(pos);
         else joint.anchor = Vector2.zero;
         joint.dampingRatio = damping;
@@ -37,13 +41,18 @@ public class MouseDragTarget : MonoBehaviour
 
     public void Move(Transform target)
     {
+        if (!isActive)
+        {
+            Detach();
+            return;
+        }
+
         joint.target = target.position;
     }
 
     public void Detach()
     {
         joint.enabled = false;
-        spriteRenderer.color = Color.white;
         //anim.SetBool("Glowing", false);
     }
 }

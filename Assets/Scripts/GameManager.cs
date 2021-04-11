@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameEvent PlayerDeath;
     [SerializeField] GameEvent OfferingPickedUp;
     [SerializeField] GameEvent RelicPickedUp;
+    [SerializeField] GameEvent SoulPickedUp;
     public bool isAlive = true;
     public static Vector3 lastCheckPoint;
+    public int soulPickUpHealAmount;
 
     //inventory
     public int relicAmount;
@@ -43,6 +45,9 @@ public class GameManager : MonoBehaviour
             case PickUp.PickUpType.Offering:
                 offeringAmount++;
                 OfferingPickedUp?.Raise();
+                break;
+            case PickUp.PickUpType.Soul:
+                SoulPickedUp?.Raise();
                 break;
             default:
                 break;

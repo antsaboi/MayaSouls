@@ -76,6 +76,8 @@ public class ProtoPlayer2D : MonoBehaviour
 
     public void StartPowerUse()
     {
+        behaviours[0].currentVelocity = Vector2.zero;
+        animator.SetFloat("XSpeed", 0);
         animator.SetBool("Power", powerUse = true);
     }
 
@@ -87,6 +89,12 @@ public class ProtoPlayer2D : MonoBehaviour
     void StartHPReduce()
     {
         StartCoroutine(HPReduce());
+    }
+
+    public void HealPlayer()
+    {
+        stats.HP += GameManager.instance.soulPickUpHealAmount;
+        stats.HP = Mathf.Clamp(stats.HP, 0, 100);
     }
 
     IEnumerator HPReduce()

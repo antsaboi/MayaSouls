@@ -8,7 +8,8 @@ public class PickUp : MonoBehaviour
     public enum PickUpType
     {
         Relic,
-        Offering
+        Offering,
+        Soul
     }
     public PickUpType type;
 

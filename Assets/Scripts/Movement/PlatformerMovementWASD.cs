@@ -255,6 +255,9 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
     public int horizontalRayCount = 4, verticalRayCount = 4;
     public LayerMask collisionMask;
     const float skinWidth = 0.015f;
+    float jumpTime = 0.05f;
+    float jumpTimeStamp;
+
     #endregion
 
     public override void StartBehaviour()
@@ -443,14 +446,6 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
     {
         if (UseAxis)
         {
-            if (_collisions.below)
-            {
-                grounded = true;
-            }
-            else {
-                grounded = false;
-            }
-
             if (_collisions.above || _collisions.below)
             {
                 currentVelocity.y = 0;
@@ -460,7 +455,7 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
 
             if (!GameManager.instance.isAlive) input = Vector2.zero;
 
-            if ((Input.GetKeyDown(jump) || Input.GetKeyDown(KeyCode.Space)) && _collisions.below)
+            if ((Input.GetKeyDown(jump) || Input.GetKeyDown(KeyCode.Space)) && grounded && Time.time > jumpTimeStamp)
             {
                 if (GameManager.instance.isAlive) currentVelocity.y = jumpForce;
             }
@@ -509,9 +504,18 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
             currentVelocity.y += gravityScale * Time.deltaTime;
             MovePlayer(currentVelocity * Time.deltaTime);
         }
+        if (_collisions.below)
+        {
+            if (!grounded)
+            {
+                jumpTimeStamp = Time.time + jumpTime;
+            }
+
+            grounded = true;
+        }
         else
         {
-            //Add keycode implementation here    
+            grounded = false;
         }
     }
 
@@ -651,7 +655,7 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
 
         if (_collisions.climbingSlope)
         {
-            rayLength = Mathf.Abs(velocity.x) + skinWidth;
+            rayLength = Mathf.Abs(velocity.x) + skinWidth + 0.1f;
             Transform rayOrigin = ((dirX == -1) ? raycastOrigins.bottomLeft : raycastOrigins.bottomRight);
             RaycastHit2D hit = Physics2D.Raycast(rayOrigin.position, dirX == -1 ? -rayOrigin.transform.right : rayOrigin.transform.right, rayLength, collisionMask);
 
