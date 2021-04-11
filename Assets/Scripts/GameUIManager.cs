@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class GameUIManager : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] GameObject CheckPointText;
     [SerializeField] float fillRate;
     [SerializeField] Image fadeImage;
+    [SerializeField] TextMeshProUGUI relicText;
+    [SerializeField] TextMeshProUGUI offeringText;
+
     float fillAmount = 1;
     [SerializeField]float hpParticlesMinPosX, hpParticlesMaxPosX;
 
@@ -62,6 +66,16 @@ public class GameUIManager : MonoBehaviour
             hpFill.fillAmount = fillAmount;
             fillParticles.transform.localPosition = new Vector2(Mathf.Lerp(hpParticlesMinPosX, hpParticlesMaxPosX, fillAmount), fillParticles.transform.localPosition.y);
         }
+    }
+
+    public void UpdateRelicText()
+    {
+        relicText.text = GameManager.instance.relicAmount.ToString();
+    }
+
+    public void UpdateOfferingText()
+    {
+        offeringText.text = GameManager.instance.offeringAmount.ToString();
     }
 
     public void Death()
