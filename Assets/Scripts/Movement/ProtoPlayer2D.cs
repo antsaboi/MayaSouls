@@ -13,6 +13,7 @@ public class ProtoPlayer2D : MonoBehaviour
     public float invulnerabilityTime;
     public int attackDamage;
     public BoxCollider2D hitBox;
+    public ParticleSystem runningParticles;
 
     [HideInInspector] public bool grounded;
     [HideInInspector] public bool reduceHP = true;

@@ -11,11 +11,11 @@ public class DestroyableObject : MonoBehaviour
     public Vector2 knockBack;
 
     Animator anim;
-    ParticleSystem particles;
+    ParticleSystem[] particles;
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
-        particles = GetComponentInChildren<ParticleSystem>();
+        particles = GetComponentsInChildren<ParticleSystem>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,7 +27,11 @@ public class DestroyableObject : MonoBehaviour
             {
                 HP--;
                 transform.DOShakePosition(0.05f, 0.3f);
-                particles.Play();
+
+                foreach (var particle in particles)
+                {
+                    particle.Play();
+                }
 
                 if (HP <= 0)
                 {
