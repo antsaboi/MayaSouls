@@ -319,6 +319,7 @@ MonoBehaviour:
   chargeForce: 4.5
   chargeDistance: 7
   attackDistance: 2
+  waitTimeAfterTurn: 1
   hitBox: {fileID: 5744418904289057253}
   currentDamage: 0
 --- !u!61 &5744418904289057253

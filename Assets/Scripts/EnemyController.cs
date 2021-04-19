@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     public float chargeForce;
     public float chargeDistance;
     public float attackDistance;
+    public float waitTimeAfterTurn;
     public BoxCollider2D hitBox;
 
     [HideInInspector] public float currentDamage;
@@ -31,6 +32,9 @@ public class EnemyController : MonoBehaviour
     bool attacking;
     bool isAlive = true;
     bool damaged = false;
+    float waitTimeStamp;
+    bool hasTurned;
+    bool grounded;
 
     // Start is called before the first frame update
     void Start()
@@ -42,11 +46,40 @@ public class EnemyController : MonoBehaviour
         var hit = Physics2D.Raycast(groundDetection.position, Vector2.down, 100f, LayerMask.GetMask("Ground"));
         if (hit.collider != null) transform.position = hit.point;
         currentDamage = touchDamage;
+        hasTurned = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (waitTimeStamp > Time.time)
+        {
+            anim.SetBool("Walking", false);
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = 0;
+            return;
+        }
+        else {
+            if (!hasTurned)
+            {
+                if (movingRight == true)
+                {
+                    movingRight = false;
+                    transform.eulerAngles = new Vector3(0, -180, 0);
+                }
+
+                else
+                {
+                    transform.eulerAngles = new Vector3(0, 0, 0);
+                    movingRight = true;
+                }
+
+                if (movingRight) hDirection = 1;
+                else hDirection = -1;
+                hasTurned = true;
+            }
+        }
+
         if (!isAlive) return;
         if (damaged)
         {
@@ -55,12 +88,11 @@ public class EnemyController : MonoBehaviour
 
         CheckForGround();
         CheckForWall();
-
         //transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
 
         if (!target) target = GameObject.FindGameObjectWithTag("Player");
 
-        if (Vector2.Distance(transform.position, target.transform.position) < chargeDistance && 
+        if (Vector2.Distance(transform.position, target.transform.position) < chargeDistance &&
             (target.transform.position.y - transform.position.y < 0.5f && target.transform.position.y - transform.position.y > -0.5f))
         {
             if (target.transform.position.x < transform.position.x)
@@ -79,7 +111,8 @@ public class EnemyController : MonoBehaviour
                 anim.SetBool("Attacking", true);
                 attacking = true;
             }
-            else {
+            else
+            {
                 currentDamage = touchDamage;
                 anim.SetBool("Charge", true);
                 charging = true;
@@ -96,7 +129,7 @@ public class EnemyController : MonoBehaviour
             attacking = false;
         }
 
-        if (!charging) rb.velocity = Vector2.right * moveSpeed * hDirection;
+        if (!charging) rb.velocity = new Vector2(1, 0) * moveSpeed * hDirection;
         else rb.velocity = Vector2.right * chargeForce * hDirection;
 
         if (attacking) rb.velocity = Vector2.zero;
@@ -104,22 +137,9 @@ public class EnemyController : MonoBehaviour
 
     void Turn()
     {
+        waitTimeStamp = Time.time + waitTimeAfterTurn;
+        hasTurned = false;
         //AudioManager.instance.PlaySound("Jump");
-        if (movingRight == true)
-        {
-            movingRight = false;
-            transform.eulerAngles = new Vector3(0, -180, 0);
-        }
-
-        else
-        {
-            transform.eulerAngles = new Vector3(0, 0, 0);
-            movingRight = true;
-        }
-
-        if (movingRight) hDirection = 1;
-        else hDirection = -1;
-
         rb.velocity = Vector3.zero;
         rb.angularVelocity = 0;
     }
@@ -149,7 +169,16 @@ public class EnemyController : MonoBehaviour
     {
         int layerMask = LayerMask.GetMask("Ground");
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 0.3f, layerMask);
-        if (groundInfo.collider == false) Turn();
+        if (groundInfo.collider == true)
+        {
+            grounded = true;
+            anim.SetBool("Walking", true);
+        }
+        if (groundInfo.collider == false)
+        {
+            grounded = false;
+            Turn();
+        }
     }
 
     void CheckForWall()

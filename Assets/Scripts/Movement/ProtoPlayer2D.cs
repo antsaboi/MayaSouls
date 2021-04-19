@@ -142,12 +142,17 @@ public class ProtoPlayer2D : MonoBehaviour
 
         if (collision.GetComponent<DamageDealer>() is DamageDealer d)
         {
-            stats.ReduceHP(d.damage);
-            behaviours[0].TakeDamage(d.knockBack);
-            CameraController.instance.ShakeCamera(3, 0.2f);
-            animator.SetTrigger("Damage");
-            invulnerabilityTimeStamp = Time.time + invulnerabilityTime;
+            TakeDamage(d.damage, d.knockBack);
         }
+    }
+
+    public void TakeDamage(int damage, Vector2 knockBack)
+    {
+        stats.ReduceHP(damage);
+        behaviours[0].TakeDamage(knockBack);
+        CameraController.instance.ShakeCamera(3, 0.2f);
+        animator.SetTrigger("Damage");
+        invulnerabilityTimeStamp = Time.time + invulnerabilityTime;
     }
 
     public void Die()

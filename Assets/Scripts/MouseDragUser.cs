@@ -26,6 +26,8 @@ public class MouseDragUser : MonoBehaviour
     float reduceHPTimer;
     ProtoPlayer2D player;
 
+    int coolValue = 5;
+
     // Start is called before the first frame update
     void Start()
     {
