@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class DestroyableObject : MonoBehaviour
 {
     public int HP = 2;
-    public Animator anim;
     [Range(0, 100)]
     public int damage;
     public Vector2 knockBack;
 
+    Animator anim;
+    ParticleSystem particles;
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
+        particles = GetComponentInChildren<ParticleSystem>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -23,6 +26,8 @@ public class DestroyableObject : MonoBehaviour
             if (player.isAttacking)
             {
                 HP--;
+                transform.DOShakePosition(0.05f, 0.3f);
+                particles.Play();
 
                 if (HP <= 0)
                 {
