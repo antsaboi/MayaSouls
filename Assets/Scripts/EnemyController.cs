@@ -47,19 +47,55 @@ public class EnemyController : MonoBehaviour
         if (hit.collider != null) transform.position = hit.point;
         currentDamage = touchDamage;
         hasTurned = true;
+        if (!target) target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (waitTimeStamp > Time.time)
+        if (!isAlive) return;
+        if (damaged)
         {
-            anim.SetBool("Walking", false);
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = 0;
             return;
         }
+
+        bool playerInReach = Vector2.Distance(transform.position, target.transform.position) < chargeDistance &&
+    (target.transform.position.y - transform.position.y < 0.5f && target.transform.position.y - transform.position.y > -0.5f);
+
+
+        if (!playerInReach)
+        {
+            if (waitTimeStamp > Time.time)
+            {
+                anim.SetBool("Walking", false);
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = 0;
+                return;
+            }
+            else
+            {
+                if (!hasTurned)
+                {
+                    if (movingRight == true)
+                    {
+                        movingRight = false;
+                        transform.eulerAngles = new Vector3(0, -180, 0);
+                    }
+
+                    else
+                    {
+                        transform.eulerAngles = new Vector3(0, 0, 0);
+                        movingRight = true;
+                    }
+
+                    if (movingRight) hDirection = 1;
+                    else hDirection = -1;
+                    hasTurned = true;
+                }
+            }
+        }
         else {
+            waitTimeStamp = 0;
             if (!hasTurned)
             {
                 if (movingRight == true)
@@ -80,20 +116,11 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        if (!isAlive) return;
-        if (damaged)
-        {
-            return;
-        }
-
         CheckForGround();
         CheckForWall();
         //transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
 
-        if (!target) target = GameObject.FindGameObjectWithTag("Player");
-
-        if (Vector2.Distance(transform.position, target.transform.position) < chargeDistance &&
-            (target.transform.position.y - transform.position.y < 0.5f && target.transform.position.y - transform.position.y > -0.5f))
+        if (playerInReach)
         {
             if (target.transform.position.x < transform.position.x)
             {

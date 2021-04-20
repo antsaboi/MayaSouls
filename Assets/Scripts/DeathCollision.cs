@@ -10,7 +10,8 @@ public class DeathCollision : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-            GameManager.instance.GameOver();
+            CameraController.instance.StopFollow();
+            GameManager.instance.GameOver(false);
         }
     }
 }

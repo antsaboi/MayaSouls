@@ -20,7 +20,6 @@ public class CameraController : MonoBehaviour
     float zoomedOutSize;
     float targetSize;
     float zoomSpeed;
-    ProtoPlayer2D target;
 
     private void Awake()
     {
@@ -36,14 +35,17 @@ public class CameraController : MonoBehaviour
     {
         cam = GetComponent<CinemachineVirtualCamera>();
         //ZoomTo(8, 0.5f);
-
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<ProtoPlayer2D>();
     }
 
     public void ZoomTo(int newSize, float speed)
     {
         targetSize = newSize;
         zoomSpeed = speed;
+    }
+
+    public void StopFollow()
+    {
+        cam.m_Follow = null;
     }
 
     private void Update()

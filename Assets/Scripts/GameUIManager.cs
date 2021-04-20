@@ -15,9 +15,12 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] Image fadeImage;
     [SerializeField] TextMeshProUGUI relicText;
     [SerializeField] TextMeshProUGUI offeringText;
+    [SerializeField] TextMeshProUGUI giveOfferingPrompt, noOfferingText, giveOfferingText;
 
     float fillAmount = 1;
     [SerializeField]float hpParticlesMinPosX, hpParticlesMaxPosX;
+
+    bool giveOffering;
 
     [System.Serializable]
     public struct AnimParameters
@@ -66,6 +69,40 @@ public class GameUIManager : MonoBehaviour
             hpFill.fillAmount = fillAmount;
             fillParticles.transform.localPosition = new Vector2(Mathf.Lerp(hpParticlesMinPosX, hpParticlesMaxPosX, fillAmount), fillParticles.transform.localPosition.y);
         }
+
+        if (giveOffering)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                GameManager.instance.UseOffering();
+            }
+        }
+    }
+
+    public void ShowAcceptOffering()
+    {
+        giveOfferingPrompt.gameObject.SetActive(false);
+        noOfferingText.gameObject.SetActive(false);
+        giveOfferingText.gameObject.SetActive(true);
+    }
+
+    public void ShowGiveOfferingPrompt()
+    {
+        giveOfferingPrompt.gameObject.SetActive(true);
+        giveOffering = true;
+    }
+
+    public void HideGiveOfferingPrompt()
+    {
+        giveOfferingPrompt.gameObject.SetActive(false);
+        giveOffering = false;
+    }
+
+    public void ShowNoOffering()
+    {
+        noOfferingText.gameObject.SetActive(true);
+        giveOfferingPrompt.gameObject.SetActive(false);
+        giveOffering = false;
     }
 
     public void UpdateRelicText()

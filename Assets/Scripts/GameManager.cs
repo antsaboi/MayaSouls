@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameEvent OfferingPickedUp;
     [SerializeField] GameEvent RelicPickedUp;
     [SerializeField] GameEvent SoulPickedUp;
+    [SerializeField] GameEvent OfferingGiven;
+    [SerializeField] GameEvent NoOffering;
     public bool isAlive = true;
     public static Vector3 lastCheckPoint;
     public int soulPickUpHealAmount;
@@ -54,10 +56,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void GameOver()
+    public void UseOffering()
+    {
+        if (offeringAmount < 1) {
+            NoOffering?.Raise();
+            return;
+        }
+        offeringAmount--;
+        OfferingGiven?.Raise();
+    }
+
+    public void GameOver(bool cameraZoom = true)
     {
         isAlive = false;
         PlayerDeath?.Raise();
+        if(cameraZoom) CameraController.instance.ZoomTo(2, 6f);
     }
 
     public void StartGame()

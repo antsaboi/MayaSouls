@@ -159,7 +159,6 @@ public class ProtoPlayer2D : MonoBehaviour
     public void Die()
     {
         animator.SetBool("IsAlive", GameManager.instance.isAlive);
-        CameraController.instance.ZoomTo(2, 6f);
     }
 
     public void DeathShakeCam()
