@@ -19,7 +19,7 @@ MonoBehaviour:
   right: 100
   jump: 32
   alignToSurface: 0
-  moveSpeed: 10
+  moveSpeed: 7
   minMoveSpeed: 0.1
   airMoveSpeed: 10
   maxSpeed: {x: 20, y: 25}
@@ -42,7 +42,7 @@ MonoBehaviour:
   OnStopEvent:
     m_PersistentCalls:
       m_Calls: []
-  currentVelocity: {x: 0, y: -0.46553198}
+  currentVelocity: {x: -0.23152228, y: -1.6278639}
   alignToSurfaceSmoothing: 1
   accelerationTimeAirborne: 0.35
   accelerationTimeGrounded: 0.2
