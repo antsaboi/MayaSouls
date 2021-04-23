@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     {
         isAlive = false;
         PlayerDeath?.Raise();
-        if(cameraZoom) CameraController.instance.ZoomTo(2, 6f);
+        if(cameraZoom) CameraController.instance.ZoomTo(3, 6f);
     }
 
     public void StartGame()
