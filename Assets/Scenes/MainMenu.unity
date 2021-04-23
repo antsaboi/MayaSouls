@@ -7277,7 +7277,7 @@ MonoBehaviour:
   nav: {fileID: 780188469}
   credits: {fileID: 607892715}
   fade: {fileID: 1076499270}
-  fogMaterial: {fileID: 2100000, guid: 18cfb1aea40985a48abb1c6b2fbf61cc, type: 2}
+  fogMaterial: {fileID: 574233482}
   speed: 0.038
 --- !u!4 &1012650520
 Transform:

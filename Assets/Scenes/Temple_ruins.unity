@@ -1742,7 +1742,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -252458209
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8148276600716136624, guid: 4916dbf1e6e4c024c98f54a0b1a6d206,
     type: 3}
   m_Color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
@@ -84803,7 +84803,7 @@ MonoBehaviour:
   isAlive: 1
   soulPickUpHealAmount: 10
   relicAmount: 0
-  offeringAmount: 1
+  offeringAmount: 0
 --- !u!4 &1755787120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8890136294791564501, guid: cad148b8a5d60c347bb6ef435da35bfe,
@@ -86359,97 +86359,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1091891787, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1091891793, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 07e5a412640426a4699860c05b99df95,
-        type: 2}
-    - target: {fileID: 1091891793, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1096792908, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511533641, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 89.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511533641, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 89.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511533641, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 114.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511533641, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 5.305
-      objectReference: {fileID: 0}
-    - target: {fileID: 1511533642, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8148276600716136624, guid: 4916dbf1e6e4c024c98f54a0b1a6d206,
-        type: 3}
-    - target: {fileID: 1800261257, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 77.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800261257, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 91.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800261257, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 120.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800261257, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 8.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800261258, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 8942162511270284263, guid: 4916dbf1e6e4c024c98f54a0b1a6d206,
-        type: 3}
-    - target: {fileID: 1800261258, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_UseSpriteMesh
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1800261258, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2123203074, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -324.40002
-      objectReference: {fileID: 0}
-    - target: {fileID: 2123203074, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -193.70001
-      objectReference: {fileID: 0}
-    - target: {fileID: 661081165800403722, guid: 676a75d93bc045d44812e17fa4979a32,
-        type: 3}
-      propertyPath: m_text
-      value: The Gods Accept Your Offering
-      objectReference: {fileID: 0}
-    - target: {fileID: 661081165800403722, guid: 676a75d93bc045d44812e17fa4979a32,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 07e5a412640426a4699860c05b99df95,
-        type: 2}
-    - target: {fileID: 661081165800403722, guid: 676a75d93bc045d44812e17fa4979a32,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1476471519458852458, guid: 676a75d93bc045d44812e17fa4979a32,
         type: 3}
       propertyPath: m_Pivot.x
@@ -86560,53 +86469,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 3074856529190866840, guid: 676a75d93bc045d44812e17fa4979a32,
-        type: 3}
-      propertyPath: m_text
-      value: Find an Offering First
-      objectReference: {fileID: 0}
-    - target: {fileID: 3074856529190866840, guid: 676a75d93bc045d44812e17fa4979a32,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 07e5a412640426a4699860c05b99df95,
-        type: 2}
-    - target: {fileID: 3074856529190866840, guid: 676a75d93bc045d44812e17fa4979a32,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3135005590774924633, guid: 676a75d93bc045d44812e17fa4979a32,
-        type: 3}
-      propertyPath: m_text
-      value: Give Offering (E)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3135005590774924633, guid: 676a75d93bc045d44812e17fa4979a32,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 07e5a412640426a4699860c05b99df95,
-        type: 2}
-    - target: {fileID: 3135005590774924633, guid: 676a75d93bc045d44812e17fa4979a32,
-        type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7194263306887662834, guid: 676a75d93bc045d44812e17fa4979a32,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 44298648}
-    - target: {fileID: 7636363788795693835, guid: 676a75d93bc045d44812e17fa4979a32,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8588480498644357052, guid: 676a75d93bc045d44812e17fa4979a32,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 676a75d93bc045d44812e17fa4979a32, type: 3}
 --- !u!1 &2092799215
@@ -87255,192 +87122,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1062636344}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2144654725 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2458659723611223465, guid: 676a75d93bc045d44812e17fa4979a32,
-    type: 3}
-  m_PrefabInstance: {fileID: 2059618845}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2144654726 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 195638430, guid: 676a75d93bc045d44812e17fa4979a32,
-    type: 3}
-  m_PrefabInstance: {fileID: 2059618845}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144654725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b86b910aafefed84facd2715d4257a1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2144654727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144654725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a9168562fcb3442bfe56af0a525006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 26f36b17a3f1486468bffbb2ad51047b, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2144654726}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
-        m_MethodName: ShowGiveOfferingPrompt
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2144654728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144654725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a9168562fcb3442bfe56af0a525006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 90d0918e68b5c334d93ed8bf28494fa2, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2144654726}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
-        m_MethodName: ShowAcceptOffering
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2144654729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144654725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a9168562fcb3442bfe56af0a525006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: a051c8e4f35e90849acb6fd185779737, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2144654726}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
-        m_MethodName: ShowNoOffering
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2144654730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144654725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a9168562fcb3442bfe56af0a525006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: bb28b6fbf6da9d34395c5315589917f2, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2144654726}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
-        m_MethodName: HideGiveOfferingPrompt
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2144654731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144654725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a9168562fcb3442bfe56af0a525006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 518acee5cd755854087988369a6462d9, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2144654726}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
-        m_MethodName: UpdateRelicText
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2144654732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144654725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2a9168562fcb3442bfe56af0a525006, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 60fb3443a1dabbd448dfaacd20d19210, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2144654726}
-        m_TargetAssemblyTypeName: GameUIManager, Assembly-CSharp
-        m_MethodName: UpdateOfferingText
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1678246718014549578
 PrefabInstance:
   m_ObjectHideFlags: 0

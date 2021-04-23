@@ -10,7 +10,7 @@ public class ManMenuManager : MonoBehaviour
     public GameObject nav, credits;
 
     public Image fade;
-    public Material fogMaterial;
+    public RawImage fogMaterial;
     [Range(0,1f)]
     public float speed;
 
@@ -23,7 +23,7 @@ public class ManMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fogMaterial.mainTextureOffset = new Vector2(Time.time * speed, 0);
+        fogMaterial.materialForRendering.mainTextureOffset = new Vector2(Time.time * speed, 0);
     }
 
     public void StartButton()
