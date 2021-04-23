@@ -155,8 +155,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536658d456cea7449f2a63d86cc8a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceType: 0
 --- !u!1 &2523808669943880057
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,8 +373,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -412,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536658d456cea7449f2a63d86cc8a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceType: 0
 --- !u!1 &2523808670216979877
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,8 +906,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -944,6 +946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536658d456cea7449f2a63d86cc8a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceType: 0
 --- !u!1 &2523808670744100895
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,8 +1129,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -1166,6 +1169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536658d456cea7449f2a63d86cc8a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceType: 0
 --- !u!1 &2523808670841307343
 GameObject:
   m_ObjectHideFlags: 0
@@ -6287,8 +6291,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -6327,6 +6331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536658d456cea7449f2a63d86cc8a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceType: 0
 --- !u!1 &2523808671396302656
 GameObject:
   m_ObjectHideFlags: 0
@@ -6420,8 +6425,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -6460,6 +6465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1536658d456cea7449f2a63d86cc8a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceType: 0
 --- !u!1 &2523808671730329470
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class OfferingTrigger : MonoBehaviour
     public GameEvent OfferingPromptEvent;
     public GameEvent EndOfferingPromptEvent;
     public GameObject movingTiles;
+    public GameObject altarOffer;
+    bool isActivated;
 
     private void Start()
     {
@@ -15,7 +17,7 @@ public class OfferingTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !isActivated)
         {
             OfferingPromptEvent?.Raise();
         }
@@ -23,7 +25,7 @@ public class OfferingTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !isActivated)
         {
             EndOfferingPromptEvent?.Raise();
         }
@@ -31,6 +33,8 @@ public class OfferingTrigger : MonoBehaviour
 
     public void ShowPath()
     {
+        altarOffer.SetActive(true);
+        isActivated = true;
         movingTiles.SetActive(true);
     }
 }
