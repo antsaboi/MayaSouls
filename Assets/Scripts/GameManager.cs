@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
 
     public void ReloadGame()
     {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ToMenu()
+    {
         SceneManager.LoadScene(0);
     }
 

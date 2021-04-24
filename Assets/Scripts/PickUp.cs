@@ -15,6 +15,8 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(!pickedUp)
+
         GameManager.instance.PickUpItem(type);
         pickedUp = true;
         gameObject.SetActive(false);

@@ -65,6 +65,7 @@ public class ProtoPlayer2D : MonoBehaviour
 
             velocity = behaviours[i].currentVelocity;
             animator.SetBool("Grounded", grounded = behaviours[i].grounded);
+            Debug.Log(velocity);
             animator.SetFloat("XSpeed", Mathf.Abs(velocity.x));
             animator.SetFloat("YSpeed", velocity.y);
         }
@@ -141,7 +142,7 @@ public class ProtoPlayer2D : MonoBehaviour
             invulnerabilityTimeStamp = Time.time + invulnerabilityTime;
         }
 
-        if (collision.GetComponent<DamageDealer>() is DamageDealer d)
+        if (!isAttacking && collision.GetComponent<DamageDealer>() is DamageDealer d)
         {
             TakeDamage(d.damage, d.knockBack);
         }

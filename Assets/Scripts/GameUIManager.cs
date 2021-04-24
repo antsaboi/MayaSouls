@@ -86,6 +86,13 @@ public class GameUIManager : MonoBehaviour
         giveOfferingText.gameObject.SetActive(true);
     }
 
+    public void HideOfferingTexts()
+    {
+        giveOfferingPrompt.gameObject.SetActive(false);
+        noOfferingText.gameObject.SetActive(false);
+        giveOfferingText.gameObject.SetActive(false);
+    }
+
     public void ShowGiveOfferingPrompt()
     {
         giveOfferingPrompt.gameObject.SetActive(true);

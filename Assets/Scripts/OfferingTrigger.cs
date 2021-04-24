@@ -9,6 +9,7 @@ public class OfferingTrigger : MonoBehaviour
     public GameObject movingTiles;
     public GameObject altarOffer;
     bool isActivated;
+    bool playerPresent;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class OfferingTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !isActivated)
         {
+            playerPresent = true;
             OfferingPromptEvent?.Raise();
         }
     }
@@ -27,12 +29,15 @@ public class OfferingTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !isActivated)
         {
+            playerPresent = false;
             EndOfferingPromptEvent?.Raise();
         }
     }
 
     public void ShowPath()
     {
+        if (!playerPresent) return;
+
         altarOffer.SetActive(true);
         isActivated = true;
         movingTiles.SetActive(true);
