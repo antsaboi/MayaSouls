@@ -20,6 +20,7 @@ public class ProtoPlayer2D : MonoBehaviour
     [HideInInspector] public bool isAttacking;
     Animator animator;
     bool powerUse;
+    bool hasSecondAttack = false;
     private float invulnerabilityTimeStamp;
 
     // Start is called before the first frame update
@@ -38,6 +39,12 @@ public class ProtoPlayer2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isAttacking && !hasSecondAttack && Input.GetMouseButtonDown(0))
+        {
+            hasSecondAttack = true;
+            animator.SetBool("SecondAttack", true);
+        }
+
         if (powerUse || isAttacking) return;
 
         for (int i = 0; i < behaviours.Length; i++)
@@ -45,9 +52,9 @@ public class ProtoPlayer2D : MonoBehaviour
             behaviours[i].UpdateBehaviour();
         }
 
-        if (grounded && !isAttacking && Input.GetMouseButtonDown(0))
+        if (grounded && Input.GetMouseButtonDown(0))
         {
-            animator.SetInteger("Attack", Random.Range(1, 4));
+            animator.SetInteger("Attack", 1);
         }
     }
 
@@ -65,7 +72,6 @@ public class ProtoPlayer2D : MonoBehaviour
 
             velocity = behaviours[i].currentVelocity;
             animator.SetBool("Grounded", grounded = behaviours[i].grounded);
-            Debug.Log(velocity);
             animator.SetFloat("XSpeed", Mathf.Abs(velocity.x));
             animator.SetFloat("YSpeed", velocity.y);
         }
@@ -170,6 +176,8 @@ public class ProtoPlayer2D : MonoBehaviour
 
     public void AttackStart()
     {
+        animator.SetBool("SecondAttack", false);
+        hasSecondAttack = false;
         hitBox.enabled = true;
         isAttacking = true;
         behaviours[0].currentVelocity = Vector2.zero;

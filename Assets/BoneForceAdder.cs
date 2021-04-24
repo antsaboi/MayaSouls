@@ -31,9 +31,5 @@ public class BoneForceAdder : MonoBehaviour
     private void OnValidate()
     {
         GetComponent<CircleCollider2D>().isTrigger = true;
-        var body = GetComponent<Rigidbody2D>();
-        body.gravityScale = 0;
-        body.drag = 1;
-        body.angularDrag = 1;
     }
 }
