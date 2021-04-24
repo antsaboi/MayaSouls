@@ -7,15 +7,20 @@ using UnityEngine;
 [RequireComponent(typeof(TargetJoint2D))]
 public class MouseDragTarget : MonoBehaviour
 {
+    [SerializeField] SpriteRenderer glowEffect;
+    private Material dissolveMat;
     private Rigidbody2D body;
     private TargetJoint2D joint;
-    Animator anim;
     public bool isActive = true;
+    bool isGlowing;
+    float dissolveAmount;
+
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
         joint = GetComponent<TargetJoint2D>();
         joint.enabled = false;
+        dissolveMat = glowEffect.material;
 
         //This is a test area
         //anim = GetComponentInChildren<Animator>();
@@ -23,6 +28,8 @@ public class MouseDragTarget : MonoBehaviour
 
     public void Attach(Color color, Vector2 pos, float damping, float frequency)
     {
+        isGlowing = true;
+
         if (!isActive)
         {
             Detach();
@@ -39,6 +46,25 @@ public class MouseDragTarget : MonoBehaviour
         //anim.SetBool("Glowing", true);
     }
 
+    private void Update()
+    {
+        if (isGlowing)
+        {
+            if (dissolveAmount > 0)
+            {
+                dissolveAmount = Mathf.MoveTowards(dissolveAmount, 0, Time.deltaTime * 0.6f);
+                dissolveMat.SetFloat("_Dissolve", dissolveAmount);
+            }
+        }
+        else {
+            if (dissolveAmount < 1)
+            {
+                dissolveAmount = Mathf.MoveTowards(dissolveAmount, 1, Time.deltaTime);
+                dissolveMat.SetFloat("_Dissolve", dissolveAmount);
+            }
+        }
+    }
+
     public void Move(Transform target)
     {
         if (!isActive)
@@ -52,6 +78,7 @@ public class MouseDragTarget : MonoBehaviour
 
     public void Detach()
     {
+        isGlowing = false;
         joint.enabled = false;
         //anim.SetBool("Glowing", false);
     }

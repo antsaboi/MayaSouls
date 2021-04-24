@@ -18,6 +18,7 @@ public class MouseDragUser : MonoBehaviour
     [SerializeField] float damping = 0.5f;
     [SerializeField] float frequency = 1f;
     [SerializeField] Color draggingColor;
+    [SerializeField] ParticleSystem dragParticles;
 
     private Transform dragTarget;
     private MouseDragTarget currentDragTarget;
@@ -47,9 +48,11 @@ public class MouseDragUser : MonoBehaviour
         if (!player.grounded) return;
 
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        dragParticles.transform.position = mousePos;
 
         if (Input.GetMouseButtonDown(1))
         {
+            dragParticles.Play();
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
             if (hit.collider != null)
@@ -81,6 +84,7 @@ public class MouseDragUser : MonoBehaviour
 
         if (Input.GetMouseButtonUp(1))
         {
+            dragParticles.Stop();
             if (dragging)
             {
                 DetachTarget();

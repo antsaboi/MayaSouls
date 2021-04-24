@@ -16,11 +16,13 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI relicText;
     [SerializeField] TextMeshProUGUI offeringText;
     [SerializeField] TextMeshProUGUI giveOfferingPrompt, noOfferingText, giveOfferingText;
+    [SerializeField] GameObject pauseMenu;
 
     float fillAmount = 1;
     [SerializeField]float hpParticlesMinPosX, hpParticlesMaxPosX;
 
     bool giveOffering;
+    bool paused;
 
     [System.Serializable]
     public struct AnimParameters
@@ -77,6 +79,26 @@ public class GameUIManager : MonoBehaviour
                 GameManager.instance.UseOffering();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!paused) PauseGame();
+            else UnPause();
+        }
+    }
+
+    public void PauseGame()
+    {
+        paused = true;
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void UnPause()
+    {
+        paused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void ShowAcceptOffering()
@@ -131,6 +153,16 @@ public class GameUIManager : MonoBehaviour
         fadeImage.DOFade(1, 2).SetDelay(3).OnComplete(() => {
             GameManager.instance.ReloadGame();
         });
+    }
+
+    public void QuitToMenu()
+    {
+        GameManager.instance.ToMenu();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     public void OnCheckPoint()
