@@ -15,7 +15,7 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] Image fadeImage;
     [SerializeField] TextMeshProUGUI relicText;
     [SerializeField] TextMeshProUGUI offeringText;
-    [SerializeField] TextMeshProUGUI giveOfferingPrompt, noOfferingText, giveOfferingText;
+    [SerializeField] TextMeshProUGUI giveOfferingPrompt, noOfferingText, giveOfferingText, deathText;
     [SerializeField] GameObject pauseMenu;
 
     float fillAmount = 1;
@@ -150,7 +150,8 @@ public class GameUIManager : MonoBehaviour
         fillAmount = 0;
         hpFill.fillAmount = 0;
         fillParticles.transform.localPosition = new Vector2(Mathf.Lerp(hpParticlesMinPosX, hpParticlesMaxPosX, fillAmount), fillParticles.transform.localPosition.y);
-        fadeImage.DOFade(1, 2).SetDelay(3).OnComplete(() => {
+        deathText.gameObject.SetActive(true);
+        fadeImage.DOFade(1, 3).SetDelay(3).OnComplete(() => {
             GameManager.instance.ReloadGame();
         });
     }

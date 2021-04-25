@@ -12,7 +12,7 @@
         SubShader
         {
             Tags {"Queue" = "Transparent" "IgnoreProjector" = "true" "RenderType" = "Transparent"}
-            ZWrite Off Blend SrcAlpha OneMinusSrcAlpha Cull Off
+            ZWrite On Blend SrcAlpha OneMinusSrcAlpha Cull Off
             Pass
             {
                 CGPROGRAM

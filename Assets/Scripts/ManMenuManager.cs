@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class ManMenuManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ManMenuManager : MonoBehaviour
     public RawImage fogMaterial;
     [Range(0,1f)]
     public float speed;
+    public TextMeshProUGUI startText;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +31,12 @@ public class ManMenuManager : MonoBehaviour
     public void StartButton()
     {
         fade.gameObject.SetActive(true);
-        fade.DOFade(1, 2f).OnComplete(()=> { SceneManager.LoadScene(1); });
+        fade.DOFade(1, 2f).OnComplete(()=> { startText.gameObject.SetActive(true); });
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void CreditsButton()
