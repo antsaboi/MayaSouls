@@ -257,6 +257,8 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
     const float skinWidth = 0.015f;
     float jumpTime = 0.05f;
     float jumpTimeStamp;
+    //hax hax 
+    ProtoPlayer2D playerScript;
 
     #endregion
 
@@ -303,6 +305,7 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
                 break;
         }
 
+        playerScript = playerInstance.GetComponent<ProtoPlayer2D>();
         _onKeys += Jump;
     }
 
@@ -475,6 +478,13 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
             {
                 FlipRaycastOrigins();
                 playerInstance.transform.localScale = new Vector2(targetDir, playerInstance.transform.localScale.y);
+                if (targetDir == 1)
+                {
+                    playerScript.deathParticles.transform.rotation = Quaternion.AngleAxis(0, Vector3.up);
+                }
+                else {
+                    playerScript.deathParticles.transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
+                }
             }
 
             if (input.x == 0)

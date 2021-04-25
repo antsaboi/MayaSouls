@@ -157,7 +157,8 @@ public class GameUIManager : MonoBehaviour
 
     public void QuitToMenu()
     {
-        GameManager.instance.ToMenu();
+        Time.timeScale = 1;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     public void QuitGame()

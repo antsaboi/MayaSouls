@@ -20,6 +20,8 @@ public class OfferingTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !isActivated)
         {
+            if (collision.GetComponent<ProtoPlayer2D>().isAttacking) return;
+
             playerPresent = true;
             OfferingPromptEvent?.Raise();
         }
@@ -29,6 +31,8 @@ public class OfferingTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player") && !isActivated)
         {
+            if (collision.GetComponent<ProtoPlayer2D>().isAttacking) return;
+
             playerPresent = false;
             EndOfferingPromptEvent?.Raise();
         }
