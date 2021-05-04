@@ -36,6 +36,7 @@ public class EnemyController : MonoBehaviour
     float waitTimeStamp;
     bool hasTurned;
     bool grounded;
+    bool haveToWait;
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +62,7 @@ public class EnemyController : MonoBehaviour
         }
 
         bool playerInReach = Vector2.Distance(transform.position, target.transform.position) < chargeDistance &&
-    (target.transform.position.y - transform.position.y < 0.5f && target.transform.position.y - transform.position.y > -0.5f);
+    (target.transform.position.y - transform.position.y < 5f && target.transform.position.y - transform.position.y > -0.5f);
 
 
         if (!playerInReach)
@@ -92,34 +93,55 @@ public class EnemyController : MonoBehaviour
                     if (movingRight) hDirection = 1;
                     else hDirection = -1;
                     hasTurned = true;
+                    haveToWait = false;
                 }
             }
         }
         else {
-            waitTimeStamp = 0;
-            if (!hasTurned)
+            if(!haveToWait) waitTimeStamp = 0;
+            if (waitTimeStamp > Time.time)
             {
-                if (movingRight == true)
+                anim.SetBool("Walking", false);
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = 0;
+                return;
+            }
+            else
+            {
+                if (!hasTurned)
                 {
-                    movingRight = false;
-                    transform.eulerAngles = new Vector3(0, -180, 0);
-                }
+                    if (movingRight == true)
+                    {
+                        movingRight = false;
+                        transform.eulerAngles = new Vector3(0, -180, 0);
+                    }
 
-                else
-                {
-                    transform.eulerAngles = new Vector3(0, 0, 0);
-                    movingRight = true;
-                }
+                    else
+                    {
+                        transform.eulerAngles = new Vector3(0, 0, 0);
+                        movingRight = true;
+                    }
 
-                if (movingRight) hDirection = 1;
-                else hDirection = -1;
-                hasTurned = true;
+                    if (movingRight) hDirection = 1;
+                    else hDirection = -1;
+                    hasTurned = true;
+                    haveToWait = false;
+                }
             }
         }
 
-        CheckForGround();
-        CheckForWall();
-        //transform.Translate(Vector2.right * moveSpeed * Time.deltaTime);
+        if (!CheckForGround())
+        {
+            haveToWait = true;
+            Turn();
+            return;
+        }
+        if (CheckForWall())
+        {
+            haveToWait = true;
+            Turn();
+            return;
+        }
 
         if (playerInReach)
         {
@@ -193,28 +215,29 @@ public class EnemyController : MonoBehaviour
         damaged = false;
     }
 
-    void CheckForGround()
+    bool CheckForGround()
     {
         int layerMask = LayerMask.GetMask("Ground");
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 0.3f, layerMask);
-        if (groundInfo.collider == true)
+        if (groundInfo.collider)
         {
             grounded = true;
             anim.SetBool("Walking", true);
-        }
-        if (groundInfo.collider == false)
+            return true;
+        }else 
         {
             grounded = false;
-            Turn();
+            return false;
         }
     }
 
-    void CheckForWall()
+    bool CheckForWall()
     {
         int layerMask = LayerMask.GetMask("Ground");
         RaycastHit2D hit = Physics2D.Raycast(wallDetection.position, Vector2.right * hDirection, 0.01f, layerMask);
 
-        if (hit.collider) Turn();
+        if (hit.collider) return true;
+        else return false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -229,6 +252,7 @@ public class EnemyController : MonoBehaviour
                 HP--;
                 HitEnd();
                 anim.SetTrigger("Damage");
+                GameManager.instance.PickUpItem(PickUp.PickUpType.Soul);
 
                 if (HP <= 0)
                 {
