@@ -18,6 +18,8 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI giveOfferingPrompt, noOfferingText, giveOfferingText, deathText;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] Image[] hpBarFlashImages;
+    [SerializeField] GameObject credits;
+    [SerializeField] Image whiteFade;
 
     float fillAmount = 1;
     [SerializeField]float hpParticlesMinPosX, hpParticlesMaxPosX;
@@ -50,7 +52,15 @@ public class GameUIManager : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.instance.isAlive) return;
+        if (!GameManager.instance.isAlive)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameManager.instance.ToMenu();
+            }
+
+            return;
+        }
 
         else if (playerStats.HP < 0)
         {
@@ -99,6 +109,19 @@ public class GameUIManager : MonoBehaviour
         }
     }
 
+    public void WinGame()
+    {
+        fillParticles.gameObject.SetActive(false);
+
+        whiteFade.DOFade(1, 3f).OnComplete(
+            () => {
+                credits.SetActive(true);
+            }
+            );
+
+        Debug.Log("winskydoodle");
+    }
+    
     void FlashHP()
     {
         for (int i = 0; i < hpBarFlashImages.Length; i++)
