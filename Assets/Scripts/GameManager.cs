@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameEvent SoulPickedUp;
     [SerializeField] GameEvent OfferingGiven;
     [SerializeField] GameEvent NoOffering;
+    [SerializeField] GameEvent winEvent;
     public bool isAlive = true;
     public static Vector3 lastCheckPoint;
     public int soulPickUpHealAmount;
@@ -29,6 +30,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+    }
+
+    public void WinGame()
+    {
+        CameraController.instance.StopFollow();
+        isAlive = false;
+        winEvent?.Raise();
     }
 
     public void ReloadGame()

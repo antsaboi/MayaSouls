@@ -17,12 +17,16 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI offeringText;
     [SerializeField] TextMeshProUGUI giveOfferingPrompt, noOfferingText, giveOfferingText, deathText;
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] Image[] hpBarFlashImages;
+    [SerializeField] GameObject credits;
+    [SerializeField] Image whiteFade;
 
     float fillAmount = 1;
     [SerializeField]float hpParticlesMinPosX, hpParticlesMaxPosX;
 
     bool giveOffering;
     bool paused;
+    float cachedHP;
 
     [System.Serializable]
     public struct AnimParameters
@@ -36,6 +40,7 @@ public class GameUIManager : MonoBehaviour
 
     private void Start()
     {
+        cachedHP = playerStats.HP;
         anim = GetComponentInChildren<Animator>();
 
         playerStats.OnDeath += Death;
@@ -47,12 +52,29 @@ public class GameUIManager : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.instance.isAlive) return;
+        if (!GameManager.instance.isAlive)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                GameManager.instance.ToMenu();
+            }
+
+            return;
+        }
+
         else if (playerStats.HP < 0)
         {
             GameManager.instance.GameOver();
             return;
         }
+
+        if (playerStats.HP > cachedHP)
+        {
+            //Health has been added, do something
+            FlashHP();
+        }
+
+        cachedHP = playerStats.HP;
 
         //HP has reduced
         if (fillAmount > playerStats.HP / 100)
@@ -84,6 +106,32 @@ public class GameUIManager : MonoBehaviour
         {
             if (!paused) PauseGame();
             else UnPause();
+        }
+    }
+
+    public void WinGame()
+    {
+        fillParticles.gameObject.SetActive(false);
+
+        whiteFade.DOFade(1, 3f).OnComplete(
+            () => {
+                credits.SetActive(true);
+            }
+            );
+
+        Debug.Log("winskydoodle");
+    }
+    
+    void FlashHP()
+    {
+        for (int i = 0; i < hpBarFlashImages.Length; i++)
+        {
+            hpBarFlashImages[i].DOComplete();
+        }
+
+        for (int i = 0; i < hpBarFlashImages.Length; i++)
+        {
+            hpBarFlashImages[i].DOFade(0.7f, 0.5f).SetLoops(2, LoopType.Yoyo);
         }
     }
 
