@@ -15,6 +15,7 @@ public class ManMenuManager : MonoBehaviour
     [Range(0,1f)]
     public float speed;
     public TextMeshProUGUI startText;
+    public AudioClip buttonSound;
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +31,12 @@ public class ManMenuManager : MonoBehaviour
 
     public void StartButton()
     {
+        AudioSystem.instance.PlayOneShot(buttonSound);
         fade.gameObject.SetActive(true);
-        fade.DOFade(1, 2f).OnComplete(()=> { startText.gameObject.SetActive(true); });
+        fade.DOFade(1, 2f).OnComplete(()=> {
+            startText.gameObject.SetActive(true);
+            AudioSystem.instance.PlayGameMusic();
+        });
     }
 
     public void StartGame()
@@ -41,18 +46,21 @@ public class ManMenuManager : MonoBehaviour
 
     public void CreditsButton()
     {
+        AudioSystem.instance.PlayOneShot(buttonSound);
         nav.SetActive(false);
         credits.SetActive(true);
     }
 
     public void CreditsBackButton()
     {
+        AudioSystem.instance.PlayOneShot(buttonSound);
         credits.SetActive(false);
         nav.SetActive(true);
     }
 
     public void QuitButton()
     {
+        AudioSystem.instance.PlayOneShot(buttonSound);
         Application.Quit();
     }
 }
