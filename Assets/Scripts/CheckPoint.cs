@@ -8,6 +8,7 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] ParticleSystem EnterParticles;
     [SerializeField] GameEvent CheckPointReached;
     [SerializeField] Transform checkPointSpawnPos;
+    [SerializeField] AudioClip onEnterAudio;
 
     ProtoPlayer2D playerBody;
     bool isEntered;
@@ -58,6 +59,7 @@ public class CheckPoint : MonoBehaviour
             activated = true;
             GameManager.lastCheckPoint = checkPointSpawnPos.position;
             CheckPointReached.Raise();
+            AudioSystem.instance.PlayOneShot(onEnterAudio);
         }
         distortion.material.SetVector("Tiling", new Vector4(-direction.x, -direction.y, 0, 0));
         distortion.material.SetVector("Position", new Vector4(0.01f, 0.01f, 0, 0));

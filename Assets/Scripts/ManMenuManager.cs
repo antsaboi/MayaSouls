@@ -15,7 +15,7 @@ public class ManMenuManager : MonoBehaviour
     [Range(0,1f)]
     public float speed;
     public TextMeshProUGUI startText;
-    public AudioClip buttonSound;
+    public AudioClip buttonSound, heartBeat;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +36,7 @@ public class ManMenuManager : MonoBehaviour
         fade.DOFade(1, 2f).OnComplete(()=> {
             startText.gameObject.SetActive(true);
             AudioSystem.instance.PlayGameMusic();
+            AudioSystem.instance.PlayOneShot(heartBeat);
         });
     }
 

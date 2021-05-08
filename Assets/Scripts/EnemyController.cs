@@ -8,10 +8,12 @@ public class EnemyController : MonoBehaviour
     [Header("References")]
     public Transform groundDetection;
     public Transform wallDetection;
+    public ParticleSystem damageParticles;
 
     [Header("General")]
     public float moveSpeed;
     public int HP = 2;
+    public AudioClip chaseScream, diesScream, attackSound, attackLandSound;
 
     [Header("Attacks")]
     [Range(0, 100)]
@@ -37,6 +39,7 @@ public class EnemyController : MonoBehaviour
     bool hasTurned;
     bool grounded;
     bool haveToWait;
+    float screamTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +59,18 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         if (!isAlive) return;
+        if (!GameManager.instance.isAlive)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = 0;
+            anim.SetBool("Walking", false);
+            anim.SetBool("Attacking", false);
+            anim.SetBool("Charge", false);
+            charging = false;
+            attacking = false;
+            return;
+        }
+
         if (damaged)
         {
             return;
@@ -82,12 +97,14 @@ public class EnemyController : MonoBehaviour
                     {
                         movingRight = false;
                         transform.eulerAngles = new Vector3(0, -180, 0);
+                        damageParticles.transform.rotation = Quaternion.AngleAxis(-90, Vector3.forward);
                     }
 
                     else
                     {
                         transform.eulerAngles = new Vector3(0, 0, 0);
                         movingRight = true;
+                        damageParticles.transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
                     }
 
                     if (movingRight) hDirection = 1;
@@ -98,7 +115,7 @@ public class EnemyController : MonoBehaviour
             }
         }
         else {
-            if(!haveToWait) waitTimeStamp = 0;
+            if (!haveToWait) waitTimeStamp = 0;
             if (waitTimeStamp > Time.time)
             {
                 anim.SetBool("Walking", false);
@@ -114,18 +131,19 @@ public class EnemyController : MonoBehaviour
                     {
                         movingRight = false;
                         transform.eulerAngles = new Vector3(0, -180, 0);
+                        damageParticles.transform.rotation = Quaternion.AngleAxis(-90, Vector3.forward);
                     }
 
                     else
                     {
                         transform.eulerAngles = new Vector3(0, 0, 0);
                         movingRight = true;
+                        damageParticles.transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
                     }
 
                     if (movingRight) hDirection = 1;
                     else hDirection = -1;
                     hasTurned = true;
-                    haveToWait = false;
                 }
             }
         }
@@ -145,6 +163,12 @@ public class EnemyController : MonoBehaviour
 
         if (playerInReach)
         {
+            if (Time.time > screamTimer)
+            {
+                AudioSystem.instance.PlayOneShot(chaseScream);
+                screamTimer = Time.time + 3f;
+            }
+
             if (target.transform.position.x < transform.position.x)
             {
                 if (movingRight) Turn();
@@ -196,6 +220,7 @@ public class EnemyController : MonoBehaviour
 
     public void HitStart()
     {
+        AudioSystem.instance.PlayOneShot(attackSound);
         hitBox.enabled = true;
         currentDamage = attackDamage;
     }
@@ -252,7 +277,9 @@ public class EnemyController : MonoBehaviour
                 HP--;
                 HitEnd();
                 anim.SetTrigger("Damage");
-                GameManager.instance.PickUpItem(PickUp.PickUpType.Soul);
+                damageParticles.Play();
+                GameManager.instance.SoulPickedUp?.Raise();
+                AudioSystem.instance.PlayOneShot(attackLandSound);
 
                 if (HP <= 0)
                 {
@@ -264,6 +291,7 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
+        AudioSystem.instance.PlayOneShot(diesScream);
         rb.velocity = Vector2.zero;
         isAlive = false;
         anim.SetTrigger("Death");

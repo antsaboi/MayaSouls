@@ -20,6 +20,7 @@ public class GameUIManager : MonoBehaviour
     [SerializeField] Image[] hpBarFlashImages;
     [SerializeField] GameObject credits;
     [SerializeField] Image whiteFade;
+    [SerializeField] AudioClip deathSound;
 
     float fillAmount = 1;
     [SerializeField]float hpParticlesMinPosX, hpParticlesMaxPosX;
@@ -194,6 +195,7 @@ public class GameUIManager : MonoBehaviour
 
     public void Death()
     {
+        AudioSystem.instance.PlayOneShot(deathSound);
         CallAnimation(animationParameters.DeathTriggerName);
         fillAmount = 0;
         hpFill.fillAmount = 0;

@@ -7,7 +7,6 @@ public class AudioSystem : MonoBehaviour
     public static AudioSystem instance;
     public AudioClip menuMusic;
     public AudioClip gameMusic;
-
     AudioSource source;
 
     // Start is called before the first frame update
@@ -25,22 +24,24 @@ public class AudioSystem : MonoBehaviour
         source = GetComponent<AudioSource>();
     }
 
-    public void PlayOneShot(AudioClip clip, float delay = 0)
+    public void PlayOneShot(AudioClip clip, float volumeScale = 0.6f, float delay = 0f)
     {
         if (delay == 0)
         {
-            source.PlayOneShot(clip);
+            source.PlayOneShot(clip, volumeScale);
         }
     }
 
     public void PlayMenuMusic()
     {
+        source.loop = true;
         source.clip = menuMusic;
         source.Play();
     }
 
     public void PlayGameMusic()
     {
+        source.loop = true;
         source.clip = gameMusic;
         source.Play();
     }

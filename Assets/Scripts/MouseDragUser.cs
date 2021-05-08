@@ -19,6 +19,7 @@ public class MouseDragUser : MonoBehaviour
     [SerializeField] float frequency = 1f;
     [SerializeField] Color draggingColor;
     [SerializeField] ParticleSystem dragParticles;
+    [SerializeField] AudioClip telekinesisSound;
 
     private Transform dragTarget;
     private MouseDragTarget currentDragTarget;
@@ -26,6 +27,8 @@ public class MouseDragUser : MonoBehaviour
     bool dragging = false;
     float reduceHPTimer;
     ProtoPlayer2D player;
+    bool playAudio;
+    float audioTimeStamp;
 
     int coolValue = 5;
 
@@ -96,10 +99,21 @@ public class MouseDragUser : MonoBehaviour
         {
             MoveTargetWithMouse(dragTarget, mousePos);
         }
+
+        if (playAudio)
+        {
+            if (Time.time > audioTimeStamp)
+            {
+                audioTimeStamp = Time.time + telekinesisSound.length;
+                AudioSystem.instance.PlayOneShot(telekinesisSound, 0.6f);
+            }
+        }
     }
 
     void AttachToMouse(Vector2 position)
     {
+        playAudio = true;
+
         dragging = true;
         player.StartPowerUse();
 
@@ -118,6 +132,7 @@ public class MouseDragUser : MonoBehaviour
 
     void DetachTarget()
     {
+        playAudio = false;
         if (ReferenceEquals(currentDragTarget, null)) return;
         player.EndPowerUse();
 

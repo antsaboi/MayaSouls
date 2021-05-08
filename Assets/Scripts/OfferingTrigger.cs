@@ -16,6 +16,7 @@ public class OfferingTrigger : MonoBehaviour
     bool checkForRelics;
     float relicTimestamp;
     public TextMeshProUGUI relicsText;
+    public AudioClip offeringAudio;
 
     private void Start()
     {

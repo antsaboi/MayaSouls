@@ -8,6 +8,7 @@ using UnityEngine;
 public class MouseDragTarget : MonoBehaviour
 {
     [SerializeField] SpriteRenderer glowEffect;
+    [SerializeField] AudioClip collisionAudio;
     private Material dissolveMat;
     private Rigidbody2D body;
     private TargetJoint2D joint;
@@ -81,5 +82,10 @@ public class MouseDragTarget : MonoBehaviour
         isGlowing = false;
         joint.enabled = false;
         //anim.SetBool("Glowing", false);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(Time.time > 2f) AudioSystem.instance.PlayOneShot(collisionAudio, 0.5f);
     }
 }

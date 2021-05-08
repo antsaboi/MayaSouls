@@ -460,6 +460,7 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
 
             if ((Input.GetKeyDown(jump) || Input.GetKeyDown(KeyCode.Space)) && grounded && Time.time > jumpTimeStamp)
             {
+                playerScript.JumpSound();
                 if (GameManager.instance.isAlive) currentVelocity.y = jumpForce;
             }
 
@@ -481,9 +482,11 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
                 if (targetDir == 1)
                 {
                     playerScript.deathParticles.transform.rotation = Quaternion.AngleAxis(0, Vector3.up);
+                    playerScript.damageParticles.transform.rotation = Quaternion.AngleAxis(0, Vector3.right);
                 }
                 else {
                     playerScript.deathParticles.transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
+                    playerScript.damageParticles.transform.rotation = Quaternion.AngleAxis(180, Vector3.right);
                 }
             }
 

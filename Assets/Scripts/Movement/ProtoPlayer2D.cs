@@ -13,7 +13,11 @@ public class ProtoPlayer2D : MonoBehaviour
     public float invulnerabilityTime;
     public int attackDamage;
     public BoxCollider2D hitBox;
-    public ParticleSystem runningParticles;
+    public ParticleSystem runningParticles, damageParticles;
+
+    [Header("Audio")]
+    [SerializeField] AudioClip attackSound1;
+    [SerializeField] AudioClip attackSound2, deathSound, jumpSound, landSound, stepSound1, stepSound2, attackLandSound;
 
     [HideInInspector] public bool grounded;
     [HideInInspector] public bool reduceHP = true;
@@ -75,6 +79,11 @@ public class ProtoPlayer2D : MonoBehaviour
             animator.SetFloat("XSpeed", Mathf.Abs(velocity.x));
             animator.SetFloat("YSpeed", velocity.y);
         }
+    }
+
+    public void JumpSound()
+    {
+        AudioSystem.instance.PlayOneShot(jumpSound, 0.3f);
     }
 
     public void StartGame()
@@ -156,11 +165,18 @@ public class ProtoPlayer2D : MonoBehaviour
 
     public void TakeDamage(int damage, Vector2 knockBack)
     {
+        damageParticles.Play();
+        AudioSystem.instance.PlayOneShot(attackLandSound);
         stats.ReduceHP(damage);
         behaviours[0].TakeDamage(knockBack);
         CameraController.instance.ShakeCamera(3, 0.2f);
         animator.SetTrigger("Damage");
         invulnerabilityTimeStamp = Time.time + invulnerabilityTime;
+    }
+
+    public void WalkSound()
+    {
+        AudioSystem.instance.PlayOneShot(Random.Range(0,1f) > 0.5f ? stepSound1 : stepSound2, 0.2f);
     }
 
     public void Die()
@@ -171,11 +187,14 @@ public class ProtoPlayer2D : MonoBehaviour
     public void DeathShakeCam()
     {
         deathParticles.Play();
+        AudioSystem.instance.PlayOneShot(deathSound);
         CameraController.instance.ShakeCamera(2, 2f);
     }
 
     public void AttackStart()
     {
+        AudioSystem.instance.PlayOneShot(attackSound1, 0.5f);
+
         animator.SetBool("SecondAttack", false);
         hasSecondAttack = false;
         hitBox.enabled = true;

@@ -178,7 +178,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 64.94285, y: 11.111832}
+  m_ConnectedAnchor: {x: 151.33936, y: 11.111832}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.8
@@ -396,7 +396,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 67.93213, y: 12.116976}
+  m_ConnectedAnchor: {x: 154.32864, y: 12.116976}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.8
@@ -929,7 +929,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 68.90402, y: 11.048622}
+  m_ConnectedAnchor: {x: 155.30052, y: 11.048622}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.8
@@ -1152,7 +1152,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 64.80005, y: 10.133137}
+  m_ConnectedAnchor: {x: 151.19655, y: 10.133137}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.8
@@ -1365,6 +1365,7 @@ MonoBehaviour:
   EnterParticles: {fileID: 2523808671226383653}
   CheckPointReached: {fileID: 11400000, guid: 0289c90201400bf49b5bcebb415687bc, type: 2}
   checkPointSpawnPos: {fileID: 1286248817}
+  onEnterAudio: {fileID: 8300000, guid: 2a613ce411020a644b73daf625dbe20d, type: 3}
 --- !u!95 &2523808671188436694
 Animator:
   serializedVersion: 3
@@ -6314,7 +6315,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 68.97567, y: 9.585117}
+  m_ConnectedAnchor: {x: 155.37218, y: 9.585117}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.8
@@ -6448,7 +6449,7 @@ SpringJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 66.00183, y: 12.101088}
+  m_ConnectedAnchor: {x: 152.39833, y: 12.101088}
   m_AutoConfigureDistance: 1
   m_Distance: 0.005
   m_DampingRatio: 0.8

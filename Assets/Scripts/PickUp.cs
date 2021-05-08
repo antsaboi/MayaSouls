@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PickUp : MonoBehaviour
 {
@@ -18,8 +19,11 @@ public class PickUp : MonoBehaviour
         if (!collision.CompareTag("Player")) return;
         if(!pickedUp)
 
-        GameManager.instance.PickUpItem(type);
+        GameManager.instance.PickUpItem(type, transform.position);
         pickedUp = true;
-        gameObject.SetActive(false);
+        transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0f), 0.3f);
+        transform.DOScale(0, 0.5f).OnComplete(()=> {
+            gameObject.SetActive(false);
+        });
     }
 }

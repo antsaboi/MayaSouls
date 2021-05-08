@@ -16,6 +16,11 @@ public class AnimationEventsCharacter : MonoBehaviour
         controller.DeathShakeCam();
     }
 
+    public void Walk()
+    {
+        controller.WalkSound();
+    }
+
     public void HitStart()
     {
         controller.AttackStart();

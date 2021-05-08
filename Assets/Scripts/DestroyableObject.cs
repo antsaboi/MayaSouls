@@ -9,6 +9,7 @@ public class DestroyableObject : MonoBehaviour
     [Range(0, 100)]
     public int damage;
     public Vector2 knockBack;
+    [SerializeField] AudioClip[] hitAudio;
 
     Animator anim;
     ParticleSystem[] particles;
@@ -26,6 +27,7 @@ public class DestroyableObject : MonoBehaviour
             if (player.isAttacking)
             {
                 HP--;
+                AudioSystem.instance.PlayOneShot(hitAudio[Random.Range(0, hitAudio.Length)]);
                 transform.DOShakePosition(0.05f, 0.3f);
 
                 foreach (var particle in particles)

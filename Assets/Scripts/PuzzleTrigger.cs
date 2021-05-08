@@ -8,6 +8,7 @@ public class PuzzleTrigger : MonoBehaviour
     public Transform button;
     public Transform door;
     public MouseDragTarget puzzleTile;
+    public AudioClip doorSound;
 
     Material doorGlow;
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,6 +35,7 @@ public class PuzzleTrigger : MonoBehaviour
         }
 
         door.DOLocalMoveY(3, 2f);
+        AudioSystem.instance.PlayOneShot(doorSound);
         CameraController.instance.ShakeCamera(1f, 2f);
     }
 }
