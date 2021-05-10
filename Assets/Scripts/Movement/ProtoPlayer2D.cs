@@ -43,10 +43,19 @@ public class ProtoPlayer2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isAttacking && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)))
+        {
+            animator.SetBool("CancelAttack", true);
+            AttackEnd();
+            Invoke("AttackEnd", 0.2f);
+        }
+
         if (isAttacking && !hasSecondAttack && Input.GetMouseButtonDown(0))
         {
+            animator.SetBool("CancelAttack", false);
             hasSecondAttack = true;
             animator.SetBool("SecondAttack", true);
+            isAttacking = true;
         }
 
         if (powerUse || isAttacking) return;
@@ -58,7 +67,9 @@ public class ProtoPlayer2D : MonoBehaviour
 
         if (grounded && Input.GetMouseButtonDown(0))
         {
+            animator.SetBool("CancelAttack", false);
             animator.SetInteger("Attack", 1);
+            isAttacking = true;
         }
     }
 
@@ -193,12 +204,11 @@ public class ProtoPlayer2D : MonoBehaviour
 
     public void AttackStart()
     {
+        isAttacking = true;
         AudioSystem.instance.PlayOneShot(attackSound1, 0.5f);
-
         animator.SetBool("SecondAttack", false);
         hasSecondAttack = false;
         hitBox.enabled = true;
-        isAttacking = true;
         behaviours[0].currentVelocity = Vector2.zero;
     }
 

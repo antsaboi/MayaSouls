@@ -119,8 +119,6 @@ public class GameUIManager : MonoBehaviour
                 credits.SetActive(true);
             }
             );
-
-        Debug.Log("winskydoodle");
     }
     
     void FlashHP()

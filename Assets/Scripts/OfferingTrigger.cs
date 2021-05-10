@@ -16,7 +16,7 @@ public class OfferingTrigger : MonoBehaviour
     bool checkForRelics;
     float relicTimestamp;
     public TextMeshProUGUI relicsText;
-    public AudioClip offeringAudio;
+    public AudioClip offeringAudio, tileRiseAudio;
 
     private void Start()
     {
@@ -78,5 +78,8 @@ public class OfferingTrigger : MonoBehaviour
         movingTiles.SetActive(true);
     }
 
-    
+    public void PlayTileRiseAudio()
+    {
+        AudioSystem.instance.PlayOneShot(tileRiseAudio, .3f);
+    }
 }

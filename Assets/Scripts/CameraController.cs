@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
     public float ShakeTime = 0.5f;
     [Range(10, 50)]
     public float ShakeFrequency = 30;
+    public GameObject distort;
 
     CinemachineBasicMultiChannelPerlin _cameraNoise;
     private float _shakeTimer, _startIntensity, _shakeTimerTotal;
@@ -60,6 +61,11 @@ public class CameraController : MonoBehaviour
     {
         _cameraNoise = camera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         if (!_cameraNoise) Debug.LogError("No CinemachineBasicMultiChannelPerlin found on camera!");
+    }
+
+    public void ActivateDistort()
+    {
+        distort.SetActive(true);
     }
 
     public void ShakeCamera(float intensity, float time)

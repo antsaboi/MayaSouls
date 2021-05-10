@@ -44,11 +44,13 @@ public class GameManager : MonoBehaviour
 
     public void ReloadGame()
     {
+        AudioSystem.instance.PlayGameMusic();
         SceneManager.LoadScene(1);
     }
 
     public void ToMenu()
     {
+        AudioSystem.instance.PlayMenuMusic();
         SceneManager.LoadScene(0);
     }
 
