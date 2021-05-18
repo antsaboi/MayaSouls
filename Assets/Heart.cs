@@ -7,6 +7,8 @@ public class Heart : MonoBehaviour
     public float parallaxAmount = 5f;
     [Range(0,1)]
     public float blurRange = 0;
+    [Range(0, 1)]
+    public float blacknessRange = 0;
     [SerializeField] SpriteRenderer[] blurredSprites;
 
     [SerializeField] AudioClip clip;
@@ -27,7 +29,7 @@ public class Heart : MonoBehaviour
         {
             if (Time.time > audioPlayTime)
             {
-                AudioSystem.instance.PlayOneShot(clip, Mathf.Abs(Mathf.Clamp(1 - Vector2.Distance(transform.position, player.transform.position) / maxDist, 0.2f, 0.8f)));
+                AudioSystem.instance.PlayOneShot(clip, Mathf.Abs(Mathf.Clamp(1 - Vector2.Distance(transform.position, player.transform.position) / maxDist, 0.3f, 1f)));
                 audioPlayTime = Time.time + clip.length + 0.2f;
             }
 
@@ -43,6 +45,13 @@ public class Heart : MonoBehaviour
         for (int i = 0; i < blurredSprites.Length; i++)
         {
             blurredSprites[i].color = new Color(1,1,1,blurRange);
+        }
+
+        var allSprites = GetComponentsInChildren<SpriteRenderer>();
+
+        for (int i = 0; i < allSprites.Length; i++)
+        {
+            allSprites[i].color = new Color(1-blacknessRange, 1-blacknessRange, 1-blacknessRange, allSprites[i].color.a);
         }
     }
 

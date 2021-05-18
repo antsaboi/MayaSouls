@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         CameraController.instance.StopFollow();
         isAlive = false;
         winEvent?.Raise();
+        FindObjectOfType<ProtoPlayer2D>().WinGame();
     }
 
     public void ReloadGame()
