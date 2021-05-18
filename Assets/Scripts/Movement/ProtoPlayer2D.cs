@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
+using DG.Tweening;
 
 public class ProtoPlayer2D : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class ProtoPlayer2D : MonoBehaviour
     public PlatformerMovementWASD[] behaviours;
     public Vector2 velocity;
     public SkeletonMecanim spine;
-    public ParticleSystem deathParticles;
+    public ParticleSystem deathParticles, winParticles;
     public float invulnerabilityTime;
     public int attackDamage;
     public BoxCollider2D hitBox;
@@ -26,6 +27,7 @@ public class ProtoPlayer2D : MonoBehaviour
     bool powerUse;
     bool hasSecondAttack = false;
     private float invulnerabilityTimeStamp;
+    bool winGame;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,8 @@ public class ProtoPlayer2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.instance.isAlive) return;
+
         if (isAttacking && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)))
         {
             animator.SetBool("CancelAttack", true);
@@ -75,6 +79,8 @@ public class ProtoPlayer2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!GameManager.instance.isAlive) return;
+
         if (powerUse || isAttacking)
         {
             if (!grounded) AttackEnd();
@@ -90,6 +96,12 @@ public class ProtoPlayer2D : MonoBehaviour
             animator.SetFloat("XSpeed", Mathf.Abs(velocity.x));
             animator.SetFloat("YSpeed", velocity.y);
         }
+    }
+
+    public void WinGame()
+    {
+        animator.gameObject.transform.DOScale(0, 0.3f);
+        winParticles.Play();
     }
 
     public void JumpSound()
@@ -166,6 +178,7 @@ public class ProtoPlayer2D : MonoBehaviour
             CameraController.instance.ShakeCamera(2f, 0.5f);
             animator.SetTrigger("Damage");
             invulnerabilityTimeStamp = Time.time + invulnerabilityTime;
+            damageParticles.Play();
         }
 
         if (!isAttacking && collision.GetComponent<DamageDealer>() is DamageDealer d)

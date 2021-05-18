@@ -318,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parallaxAmount: 20
   blurRange: 1
+  blacknessRange: 0
   blurredSprites:
   - {fileID: 1416360061}
   - {fileID: 1581927217}
