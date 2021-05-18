@@ -98,8 +98,8 @@ public class ProtoPlayer2D : MonoBehaviour
 
     public void WinGame()
     {
-        animator.gameObject.transform.DOScale(0, 0.3f);
-        winParticles.Play();
+/*        animator.gameObject.transform.DOScale(0, 0.3f);
+        winParticles.Play();*/
     }
 
     public void JumpSound()
