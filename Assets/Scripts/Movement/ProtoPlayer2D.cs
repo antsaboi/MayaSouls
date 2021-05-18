@@ -45,16 +45,14 @@ public class ProtoPlayer2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!GameManager.instance.isAlive) return;
-
-        if (isAttacking && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)))
+        if (GameManager.instance.isAlive && isAttacking && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow)))
         {
             animator.SetBool("CancelAttack", true);
             AttackEnd();
             Invoke("AttackEnd", 0.2f);
         }
 
-        if (isAttacking && !hasSecondAttack && Input.GetMouseButtonDown(0))
+        if (GameManager.instance.isAlive && isAttacking && !hasSecondAttack && Input.GetMouseButtonDown(0))
         {
             animator.SetBool("CancelAttack", false);
             hasSecondAttack = true;
@@ -69,7 +67,7 @@ public class ProtoPlayer2D : MonoBehaviour
             behaviours[i].UpdateBehaviour();
         }
 
-        if (grounded && Input.GetMouseButtonDown(0))
+        if (GameManager.instance.isAlive && grounded && Input.GetMouseButtonDown(0))
         {
             animator.SetBool("CancelAttack", false);
             animator.SetInteger("Attack", 1);

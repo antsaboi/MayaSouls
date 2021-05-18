@@ -458,7 +458,7 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
 
             if (!GameManager.instance.isAlive) input = Vector2.zero;
 
-            if ((Input.GetKeyDown(jump) || Input.GetKeyDown(KeyCode.Space)) && grounded && Time.time > jumpTimeStamp)
+            if (GameManager.instance.isAlive && (Input.GetKeyDown(jump) || Input.GetKeyDown(KeyCode.Space)) && grounded && Time.time > jumpTimeStamp)
             {
                 playerScript.JumpSound();
                 if (GameManager.instance.isAlive) currentVelocity.y = jumpForce;
