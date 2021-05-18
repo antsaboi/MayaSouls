@@ -138,6 +138,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MainTex: {r: 10, g: 10, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _offset: {r: 7602.526, g: 1574.3328, b: 0, a: 0}
+    - _offset: {r: 7687.363, g: 1601.3658, b: 0, a: 0}
     - _tiling: {r: 10, g: 10, b: 0, a: 0}
   m_BuildTextureStacks: []

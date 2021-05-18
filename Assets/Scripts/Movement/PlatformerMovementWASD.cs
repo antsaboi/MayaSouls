@@ -482,11 +482,11 @@ public class PlatformerMovementWASD : ProtoPlayerBehaviourBase
                 if (targetDir == 1)
                 {
                     playerScript.deathParticles.transform.rotation = Quaternion.AngleAxis(0, Vector3.up);
-                    playerScript.damageParticles.transform.rotation = Quaternion.Euler(180, 90, 90);
+                    playerScript.damageParticles.transform.rotation = Quaternion.Euler(0, 90, 90);
                 }
                 else {
                     playerScript.deathParticles.transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
-                    playerScript.damageParticles.transform.rotation = Quaternion.Euler(0, 90, 90);
+                    playerScript.damageParticles.transform.rotation = Quaternion.Euler(180, 90, 90);
                 }
             }
 
