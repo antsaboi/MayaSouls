@@ -448,11 +448,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 322705847909818081, guid: 480d011b37b7dd14c9a8cfcc70b007f6,
         type: 3}
-      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 322705847909818081, guid: 480d011b37b7dd14c9a8cfcc70b007f6,
-        type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].inSlope
       value: 0.4262548
       objectReference: {fileID: 0}
