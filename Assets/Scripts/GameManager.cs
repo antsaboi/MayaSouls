@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public int offeringAmount;
 
     [SerializeField] AudioClip soulAudio, relicAudio, offeringAudio;
-    [SerializeField] ParticleSystem soulPickupParticles, relicPickupParticles;
+    [SerializeField] ParticleSystem soulPickupParticles, relicPickupParticles, offeringPickupParticles;
 
     private void Awake()
     {
@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
         isAlive = false;
         winEvent?.Raise();
         FindObjectOfType<ProtoPlayer2D>().WinGame();
+        relicAmount = 0;
+        lastCheckPoint = Vector3.zero;
+        offeringAmount = 0;
     }
 
     public void ReloadGame()
@@ -67,9 +70,11 @@ public class GameManager : MonoBehaviour
                 relicPickupParticles.Play();
                 break;
             case PickUp.PickUpType.Offering:
-                AudioSystem.instance.PlayOneShot(offeringAudio);
+                AudioSystem.instance.PlayOneShot(offeringAudio, 1f);
                 offeringAmount++;
                 OfferingPickedUp?.Raise();
+                offeringPickupParticles.transform.position = position;
+                offeringPickupParticles.Play();
                 break;
             case PickUp.PickUpType.Soul:
                 AudioSystem.instance.PlayOneShot(soulAudio);

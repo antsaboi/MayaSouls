@@ -42,7 +42,7 @@ MonoBehaviour:
   OnStopEvent:
     m_PersistentCalls:
       m_Calls: []
-  currentVelocity: {x: -1.86e-43, y: -0.68684804}
+  currentVelocity: {x: -3e-45, y: -0.55736}
   alignToSurfaceSmoothing: 10
   accelerationTimeAirborne: 0.35
   accelerationTimeGrounded: 0.2
