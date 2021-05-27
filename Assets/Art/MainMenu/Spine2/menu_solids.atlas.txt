@@ -1,0 +1,69 @@
+
+menu_solids.png
+size: 1382,673
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Folder 4
+  rotate: true
+  xy: 1175, 11
+  size: 163, 97
+  orig: 163, 97
+  offset: 0, 0
+  index: -1
+Layer 11
+  rotate: false
+  xy: 1274, 2
+  size: 95, 172
+  orig: 95, 172
+  offset: 0, 0
+  index: -1
+Layer 15
+  rotate: false
+  xy: 1175, 176
+  size: 118, 151
+  orig: 118, 151
+  offset: 0, 0
+  index: -1
+Layer 17
+  rotate: false
+  xy: 1305, 485
+  size: 72, 186
+  orig: 72, 186
+  offset: 0, 0
+  index: -1
+Layer 19
+  rotate: false
+  xy: 1295, 229
+  size: 85, 98
+  orig: 85, 98
+  offset: 0, 0
+  index: -1
+Layer 35
+  rotate: false
+  xy: 2, 10
+  size: 1171, 661
+  orig: 1171, 661
+  offset: 0, 0
+  index: -1
+Layer 38
+  rotate: true
+  xy: 1301, 387
+  size: 88, 58
+  orig: 88, 58
+  offset: 0, 0
+  index: -1
+Layer 7
+  rotate: false
+  xy: 1175, 477
+  size: 128, 194
+  orig: 128, 194
+  offset: 0, 0
+  index: -1
+Layer 9
+  rotate: true
+  xy: 1175, 329
+  size: 146, 124
+  orig: 146, 124
+  offset: 0, 0
+  index: -1
